@@ -1,7 +1,7 @@
 import { Icons } from '@/components/shared/icons'
 import { Section } from '@/components/shared/section'
 import { buttonVariants } from '@/components/ui/button'
-import { cn } from '@/lib/cn'
+import { cn } from '@/utils/cn'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
