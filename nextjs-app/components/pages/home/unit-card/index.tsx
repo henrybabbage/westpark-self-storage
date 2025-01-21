@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Warehouse } from 'lucide-react'
 
-interface UnitCardProps {
+type UnitCardProps = {
 	size: string
 	area: number
 	dimensions: string
@@ -11,7 +11,7 @@ interface UnitCardProps {
 
 export function UnitCard({ size, area, dimensions, suitableFor, price }: UnitCardProps) {
 	return (
-		<Card className='bg-[#8B2323] text-white border-none'>
+		<Card className='bg-brand-800 text-white border-none'>
 			<CardHeader>
 				<Warehouse className='w-8 h-8 mb-2' />
 				<h3 className='text-2xl font-medium'>{size}</h3>
