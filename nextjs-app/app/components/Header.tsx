@@ -1,51 +1,131 @@
+'use client'
+
+import { Button } from '@/components/ui/button'
+import { Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
+import { cn } from '@/utils/cn'
+import { useMotionValueEvent, useScroll } from 'framer-motion'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
+
+const menuItem = [
+	{
+		id: 1,
+		label: 'Onsite Facilities',
+		href: '/onsite-facilities'
+	},
+	{
+		id: 2,
+		label: 'Pricing',
+		href: '/pricing'
+	},
+	{
+		id: 3,
+		label: 'Contact',
+		href: '/contact'
+	}
+]
 
 export default function Header() {
+	const [headerHidden, setHeaderHidden] = useState(false)
+	const [hamburgerMenuIsOpen, setHamburgerMenuIsOpen] = useState(false)
+
+	const { scrollY } = useScroll()
+
+	useMotionValueEvent(scrollY, 'change', (latest) => {
+		const previous = scrollY.getPrevious() ?? 0
+		if (latest > previous && latest > 100) {
+			setHeaderHidden(true)
+		} else {
+			setHeaderHidden(false)
+		}
+	})
+
+	// Lock scroll
+	useEffect(() => {
+		const html = document.querySelector('html')
+		if (html) html.classList.toggle('overflow-hidden', hamburgerMenuIsOpen)
+	}, [hamburgerMenuIsOpen])
+
+	useEffect(() => {
+		const closeHamburgerNavigation = () => setHamburgerMenuIsOpen(false)
+		window.addEventListener('orientationchange', closeHamburgerNavigation)
+		window.addEventListener('resize', closeHamburgerNavigation)
+
+		return () => {
+			window.removeEventListener('orientationchange', closeHamburgerNavigation)
+			window.removeEventListener('resize', closeHamburgerNavigation)
+		}
+	}, [setHamburgerMenuIsOpen])
+
 	return (
-		<header className='fixed z-50 h-24 inset-0 bg-white/80 flex items-center backdrop-blur-lg'>
-			<div className='container py-6 sm:px-6'>
+		<header className='fixed flex items-center left-0 right-0 top-0 z-50 bg-white'>
+			<div className='container py-6 px-6'>
 				<div className='flex items-center justify-between gap-5'>
 					<Link className='flex items-center gap-2' href='/'>
 						Westpark Self Storage
 					</Link>
 
-					<nav className=''>
+					<nav className='hidden md:block'>
 						<ul
 							role='list'
-							className='flex items-center gap-4 md:gap-6 leading-5 text-sm md:text-base tracking-tight font-normal'
+							className='flex items-center gap-6 leading-5 text-sm md:text-base tracking-tight font-normal'
 						>
-							<li className="flex gap-2">
-								<Link href='/onsite-facilities' className=''>
-									Onsite Facilities
-								</Link>
-								<Link href='/pricing' className=''>
-									Pricing
-								</Link>
-								<Link href='/contact' className=''>
-									Contact
-								</Link>
-							</li>
-
-							<li className='sm:before:w-[1px] sm:before:bg-gray-100 before:block flex sm:gap-4 md:gap-6'>
+							{menuItem.map((item) => (
+								<li key={item.label} className='flex gap-5'>
+									<Link href={item.href} className='whitespace-nowrap'>
+										{item.label}
+									</Link>
+								</li>
+							))}
+							<li className='flex'>
 								<Link
-									className='rounded-full flex gap-2 items-center bg-black hover:bg-brand-800 p-1 sm:py-3 sm:px-6 text-white transition-colors duration-200'
-									href='https://github.com/sanity-io/sanity-template-nextjs-clean'
-									target='_blank'
-									rel='noopener noreferrer'
+									className='whitespace-nowrap rounded-full flex gap-2 items-center bg-black hover:bg-brand-800 p-1 sm:py-3 sm:px-6 text-white transition-colors duration-200'
+									href='tel:0274977407'
 								>
-									<span className='sr-only sm:not-sr-only'>027 XXX XXX</span>
-									<svg
-										xmlns='http://www.w3.org/2000/svg'
-										viewBox='0 0 24 24'
-										fill='currentColor'
-										className='h-6'
-									>
-										<path d='M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z'></path>
-									</svg>
+									0274 977407
 								</Link>
 							</li>
 						</ul>
 					</nav>
+
+					<Sheet>
+						<SheetTrigger asChild className='block md:hidden'>
+							<Button variant='minimal'>Menu</Button>
+						</SheetTrigger>
+						<SheetContent
+							onOpenAutoFocus={(e) => e.preventDefault()}
+							onCloseAutoFocus={(e) => e.preventDefault()}
+							side='none'
+							className='flex flex-col gap-y-24 py-6 px-6 md:hidden bg-background left-0 right-0 top-0 h-full w-full'
+						>
+							<SheetHeader className=''>
+								<SheetTitle className=''>
+									<Link className='flex items-start' href='/'>
+										Westpark Self Storage
+									</Link>
+								</SheetTitle>
+							</SheetHeader>
+
+							<nav className=''>
+								<ul className='flex flex-col gap-4'>
+									{menuItem.map((item) => (
+										<li key={item.id} className='py-0.5'>
+											<Link
+												className={cn(
+													'hover:text-grey text-sm flex h-full w-full items-center transition-[color,transform] duration-300'
+												)}
+												href={item.href}
+											>
+												{item.label}
+											</Link>
+										</li>
+									))}
+								</ul>
+							</nav>
+
+							<SheetFooter></SheetFooter>
+						</SheetContent>
+					</Sheet>
 				</div>
 			</div>
 		</header>
