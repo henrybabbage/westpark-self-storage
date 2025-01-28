@@ -48,11 +48,7 @@ export default async function Page(props: Props) {
 	const [{ data: page }] = await Promise.all([sanityFetch({ query: getPageQuery, params })])
 
 	if (!page?._id) {
-		return (
-			<div className='py-40'>
-				<PageOnboarding />
-			</div>
-		)
+		return <></>
 	}
 
 	return (
