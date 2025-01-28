@@ -6,7 +6,7 @@ import Link from 'next/link'
 export default function HeroSection() {
 	return (
 		<Section id='westpark'>
-			<div className='py-12 max-w-full h-full'>
+			<div className='pt-12 pb-20 max-w-full h-full'>
 				<div className='flex flex-col gap-8 justify-start items-start h-full w-full'>
 					<HeroTitles />
 					<HeroCTA />
@@ -34,16 +34,16 @@ function HeroCTA() {
 	return (
 		<div className='relative flex flex-col gap-8'>
 			<div className='flex flex-col gap-4 max-w-screen-md'>
-				<h3 className='font-medium text-lg leading-snug'>
+				<h3 className='font-medium text-lg leading-snug text-balance text-neutral-600'>
 					Select from a range of self storage units with 24 hour access 7 days a week to our clean, dry,
 					secure facilities. Call today, store tomorrow!
 				</h3>
 			</div>
 			<div className='flex w-full gap-4 items-start justify-start'>
-				<Link href='/onsite-facilities' className={cn(buttonVariants({ variant: 'brand' }), '')}>
+				<Link href='/onsite-facilities' className={cn(buttonVariants({ variant: 'brand' }), 'text-lg')}>
 					Compare units
 				</Link>
-				<Link href='/pricing' className={cn(buttonVariants({ variant: 'outline' }), '')}>
+				<Link href='/pricing' className={cn(buttonVariants({ variant: 'outline' }), 'text-lg')}>
 					See pricing
 				</Link>
 			</div>

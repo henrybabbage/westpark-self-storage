@@ -23,14 +23,9 @@ const Section = forwardRef<HTMLElement, SectionProps>(
 			<section id={id} ref={ref}>
 				<div className={cn('relative mx-auto container', className)}>
 					{(title || subtitle || description) && (
-						<div
-							className={cn(
-								alignmentClass,
-								'relative mx-auto overflow-hidden p-2 py-8 md:p-12'
-							)}
-						>
+						<div className={cn(alignmentClass, 'relative mx-auto overflow-hidden p-2 py-8 md:py-12')}>
 							{title && (
-								<h2 className='text-sm text-muted-foreground text-balance font-semibold tracking-tight uppercase'>
+								<h2 className='text-sm text-muted-foreground text-balance font-normal tracking-tight uppercase'>
 									{title}
 								</h2>
 							)}
@@ -38,7 +33,7 @@ const Section = forwardRef<HTMLElement, SectionProps>(
 							{subtitle && (
 								<h3
 									className={cn(
-										'mx-0 mt-4 max-w-lg text-5xl text-balance font-bold sm:max-w-none sm:text-4xl md:text-5xl lg:text-6xl leading-[1.2] tracking-tighter text-foreground',
+										'mx-0 mb-8 max-w-2xl text-5xl text-balance font-normal sm:max-w-none sm:text-4xl md:text-5xl lg:text-5xl leading-[1.2] lg:leading-[1.3] tracking-tight text-foreground',
 										align === 'center' ? 'mx-auto' : align === 'right' ? 'ml-auto' : ''
 									)}
 								>
