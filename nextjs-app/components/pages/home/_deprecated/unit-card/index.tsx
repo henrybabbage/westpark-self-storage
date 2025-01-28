@@ -11,7 +11,7 @@ type UnitCardProps = {
 
 export function UnitCard({ size, area, dimensions, suitableFor, price }: UnitCardProps) {
 	return (
-		<Card className='bg-brand-800 text-white border-none'>
+		<Card className='bg-brand-800 text-white h-12 w-auto border-none aspect-[4/5]'>
 			<CardHeader>
 				<Warehouse className='w-8 h-8 mb-2' />
 				<h3 className='text-2xl font-medium'>{size}</h3>

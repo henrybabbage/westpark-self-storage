@@ -38,7 +38,7 @@ export function UnitsSection() {
 				<h2 className='text-4xl font-normal'>We have 4 different sized storage units available.</h2>
 				<p className='text-2xl'>Each unit has a door height of 3m.</p>
 			</div>
-			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 h-16'>
 				{units.map((unit) => (
 					<UnitCard
 						key={unit.size}

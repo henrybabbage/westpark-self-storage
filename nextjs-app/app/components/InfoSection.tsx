@@ -22,7 +22,7 @@ export default function CTA({ block }: InfoProps) {
             {block.subheading}
           </span>
         )}
-        <div className="prose prose-a:text-red-500 mt-4">
+        <div className="prose prose-a:text-brand-800 mt-4">
           {block?.content?.length && (
             <PortableText
               className=""
