@@ -1,11 +1,11 @@
-import LandingSection from '@/components/pages/home/landing'
+import HeroSection from '@/components/pages/home/hero'
+import HeroImageSection from '@/components/pages/home/hero-image'
 
 export default async function Page() {
 	return (
 		<>
-			<div className='container relative'>
-				<LandingSection />
-			</div>
+			<HeroSection />
+			<HeroImageSection />
 		</>
 	)
 }
