@@ -60,7 +60,7 @@ export default function Header() {
 	return (
 		<header className='fixed container flex items-center left-0 right-0 top-0 z-50 bg-white'>
 			<div className='flex items-center justify-between w-full py-6 px-2'>
-				<Link className='flex items-center gap-2' href='/'>
+				<Link className='flex items-center gap-2 hover:text-brand-800' href='/'>
 					Westpark Self Storage
 				</Link>
 
@@ -102,7 +102,7 @@ export default function Header() {
 					>
 						<SheetHeader className=''>
 							<SheetTitle className=''>
-								<Link className='flex items-start text-medium' href='/'>
+								<Link className='flex items-start text-medium hover:text-brand-800' href='/'>
 									Westpark Self Storage
 								</Link>
 							</SheetTitle>
