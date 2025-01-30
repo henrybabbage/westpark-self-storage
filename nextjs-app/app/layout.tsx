@@ -27,8 +27,11 @@ export async function generateMetadata(): Promise<Metadata> {
 		// Metadata should never contain stega
 		stega: false
 	})
-	const title = settings?.title || demo.title
-	const description = settings?.description || demo.description
+    const title = "Westpark Self Storage"
+    // settings?.title || demo.title
+    const description =
+		'For a safe, clean and secure way to store your goods, speak to Westpark Self Storage in Christchurch.'
+    // settings?.description || demo.description
 
 	const ogImage = resolveOpenGraphImage(settings?.ogImage)
 	let metadataBase: URL | undefined = undefined
@@ -43,7 +46,8 @@ export async function generateMetadata(): Promise<Metadata> {
 			template: `%s | ${title}`,
 			default: title
 		},
-		description: toPlainText(description),
+        description: description,
+        //  toPlainText(description)
 		openGraph: {
 			images: ogImage ? [ogImage] : []
 		}
