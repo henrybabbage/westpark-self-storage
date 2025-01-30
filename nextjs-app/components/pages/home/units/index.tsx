@@ -46,9 +46,9 @@ export default function Units() {
 		<Section
 			id='units'
 			align='center'
-			subtitle="From the contents of an office to a collectible car or the family caravan, we'll keep it safe and dry for you."
+			subtitle='We have 4 different sized storage units available. Each unit has a door height of 3m.'
 		>
-			<div className='pb-20 grid grid-cols-2 lg:grid-cols-4 gap-2'>
+			<div className='pb-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2'>
 				{units.map((unit) => (
 					<UnitCard key={unit.size} {...unit} />
 				))}
@@ -59,7 +59,7 @@ export default function Units() {
 
 function UnitCard({ size, area, dimensions, suitableFor, price }: UnitCardProps) {
 	return (
-		<Card className='bg-brand-800 text-white h-full min-h-[420px] w-auto flex flex-col justify-between'>
+		<Card className='bg-brand-800 text-white h-full min-h-[340px] lg:min-h-[420px] w-auto flex flex-col justify-between'>
 			<CardHeader className='pb-2'>
 				<Warehouse className='w-8 h-8 mb-2' />
 				<h3 className='text-3xl font-light'>{size}</h3>
