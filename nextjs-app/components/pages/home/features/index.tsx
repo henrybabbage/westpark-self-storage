@@ -64,7 +64,7 @@ export function FeatureCard({ icon: Icon, title, description }: FeatureCardProps
 					)}
 				>
 					<div className='flex flex-col gap-y-2 items-center'>
-						<div className='bg-gradient-to-b from-brand-300 to-brand-400 p-2 rounded-xl text-white transition-colors group-hover:from-secondary group-hover:to-secondary/80'>
+						<div className='bg-brand-800 p-2 rounded-xl text-white transition-colors'>
 							<Icon size={24} />
 						</div>
 						<h2 className='text-xl font-medium text-card-foreground text-center text-balance'>{title}</h2>
