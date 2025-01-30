@@ -58,7 +58,7 @@ export default function Header() {
 	}, [setHamburgerMenuIsOpen])
 
 	return (
-		<header className='fixed container flex items-center left-0 right-0 top-0 z-50 bg-transparent'>
+		<header className='fixed container flex items-center left-0 right-0 top-0 z-50 bg-white'>
 			<div className='flex items-center justify-between w-full py-6 px-2'>
 				<Link className='flex items-center gap-2' href='/'>
 					Westpark Self Storage
@@ -71,14 +71,17 @@ export default function Header() {
 					>
 						{menuItem.map((item) => (
 							<li key={item.label} className='flex gap-5'>
-								<Link href={item.href} className='whitespace-nowrap'>
+								<Link
+									href={item.href}
+									className='text-medium whitespace-nowrap text-primary hover:text-brand-800 transition-colors'
+								>
 									{item.label}
 								</Link>
 							</li>
 						))}
 						<li className='flex'>
 							<Link
-								className='whitespace-nowrap rounded-full flex gap-2 items-center bg-black hover:bg-brand-800 p-1 sm:py-3 sm:px-6 text-white transition-colors duration-200'
+								className='text-medium whitespace-nowrap rounded-full flex gap-2 items-center bg-primary hover:bg-brand-800 p-1 sm:py-3 sm:px-6 text-white transition-colors duration-200'
 								href='tel:0274977407'
 							>
 								0274 977407
@@ -99,7 +102,7 @@ export default function Header() {
 					>
 						<SheetHeader className=''>
 							<SheetTitle className=''>
-								<Link className='flex items-start' href='/'>
+								<Link className='flex items-start text-medium' href='/'>
 									Westpark Self Storage
 								</Link>
 							</SheetTitle>
