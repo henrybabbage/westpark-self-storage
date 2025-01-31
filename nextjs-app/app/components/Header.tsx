@@ -58,9 +58,9 @@ export default function Header() {
 	}, [setNavSheetIsOpen])
 
 	return (
-		<header className='fixed container flex items-center left-0 right-0 top-0 z-50 bg-white'>
-			<div className='flex items-center justify-between w-full py-6 px-2'>
-				<Link className='flex font-medium items-center gap-2 hover:text-brand-800' href='/'>
+		<header className='fixed lg:container flex items-center left-0 right-0 top-0 z-50 bg-white'>
+			<div className='flex items-center justify-between w-full py-6 px-6'>
+				<Link className='flex font-medium hover:text-brand-800' href='/'>
 					Westpark Self Storage
 				</Link>
 
@@ -92,7 +92,7 @@ export default function Header() {
 
 				<Sheet open={navSheetIsOpen} onOpenChange={setNavSheetIsOpen}>
 					<SheetTrigger asChild className='block md:hidden'>
-						<Button variant='minimal'>Menu</Button>
+						<Button variant='minimal' size="minimal">Menu</Button>
 					</SheetTrigger>
 					<SheetContent
 						onOpenAutoFocus={(e) => e.preventDefault()}
