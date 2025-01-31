@@ -1,4 +1,4 @@
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/shared/accordion'
 import { ChevronUp } from 'lucide-react'
 
 const CONTENT = [
@@ -47,7 +47,7 @@ export function Faq2() {
 							transition={{ duration: 0.2, ease: 'easeInOut' }}
 						>
 							{CONTENT.map((item) => (
-                                <AccordionItem key={item.value} value={item.value} className='py-4'>
+								<AccordionItem key={item.value} value={item.value} className='py-4'>
 									<AccordionTrigger className='w-full text-left text-zinc-950 dark:text-zinc-50'>
 										<div className='flex items-center justify-between'>
 											<div>{item.title}</div>

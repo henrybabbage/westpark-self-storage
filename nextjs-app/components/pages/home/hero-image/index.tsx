@@ -1,4 +1,4 @@
-import hero from '@/components/pages/home/_assets/westpark-hero-units-centered.jpg'
+import hero from '@/components/pages/home/_assets/westpark-hero-symmetrical.jpg'
 import { ResponsiveImage } from '@/components/shared/responsive-image'
 import { Section } from '@/components/shared/section'
 
