@@ -27,7 +27,7 @@ const menuItem = [
 
 export default function Header() {
 	const [headerHidden, setHeaderHidden] = useState(false)
-	const [hamburgerMenuIsOpen, setHamburgerMenuIsOpen] = useState(false)
+	const [navSheetIsOpen, setNavSheetIsOpen] = useState(false)
 
 	const { scrollY } = useScroll()
 
@@ -43,11 +43,11 @@ export default function Header() {
 	// Lock scroll
 	useEffect(() => {
 		const html = document.querySelector('html')
-		if (html) html.classList.toggle('overflow-hidden', hamburgerMenuIsOpen)
-	}, [hamburgerMenuIsOpen])
+		if (html) html.classList.toggle('overflow-hidden', navSheetIsOpen)
+	}, [navSheetIsOpen])
 
 	useEffect(() => {
-		const closeHamburgerNavigation = () => setHamburgerMenuIsOpen(false)
+		const closeHamburgerNavigation = () => setNavSheetIsOpen(false)
 		window.addEventListener('orientationchange', closeHamburgerNavigation)
 		window.addEventListener('resize', closeHamburgerNavigation)
 
@@ -55,12 +55,12 @@ export default function Header() {
 			window.removeEventListener('orientationchange', closeHamburgerNavigation)
 			window.removeEventListener('resize', closeHamburgerNavigation)
 		}
-	}, [setHamburgerMenuIsOpen])
+	}, [setNavSheetIsOpen])
 
 	return (
 		<header className='fixed container flex items-center left-0 right-0 top-0 z-50 bg-white'>
 			<div className='flex items-center justify-between w-full py-6 px-2'>
-				<Link className='flex items-center gap-2 hover:text-brand-800' href='/'>
+				<Link className='flex font-medium items-center gap-2 hover:text-brand-800' href='/'>
 					Westpark Self Storage
 				</Link>
 
@@ -73,7 +73,7 @@ export default function Header() {
 							<li key={item.label} className='flex gap-5'>
 								<Link
 									href={item.href}
-									className='text-medium whitespace-nowrap text-primary hover:text-brand-800 transition-colors'
+									className='font-medium whitespace-nowrap text-primary hover:text-brand-800 transition-colors'
 								>
 									{item.label}
 								</Link>
@@ -81,7 +81,7 @@ export default function Header() {
 						))}
 						<li className='flex'>
 							<Link
-								className='text-medium whitespace-nowrap rounded-full flex gap-2 items-center bg-primary hover:bg-brand-800 p-1 sm:py-3 sm:px-6 text-white transition-colors duration-200'
+								className='font-medium whitespace-nowrap rounded-full flex gap-2 items-center bg-primary hover:bg-brand-800 p-1 sm:py-3 sm:px-6 text-white transition-colors duration-200'
 								href='tel:0274977407'
 							>
 								0274 977407
@@ -90,7 +90,7 @@ export default function Header() {
 					</ul>
 				</nav>
 
-				<Sheet>
+				<Sheet open={navSheetIsOpen} onOpenChange={setNavSheetIsOpen}>
 					<SheetTrigger asChild className='block md:hidden'>
 						<Button variant='minimal'>Menu</Button>
 					</SheetTrigger>
@@ -102,7 +102,11 @@ export default function Header() {
 					>
 						<SheetHeader className=''>
 							<SheetTitle className=''>
-								<Link className='flex items-start text-medium hover:text-brand-800' href='/'>
+								<Link
+									className='flex items-start font-medium hover:text-brand-800'
+									href='/'
+									onClick={() => setNavSheetIsOpen(false)}
+								>
 									Westpark Self Storage
 								</Link>
 							</SheetTitle>
@@ -114,9 +118,10 @@ export default function Header() {
 									<li key={item.id} className='py-0.5'>
 										<Link
 											className={cn(
-												'hover:text-grey text-sm flex h-full w-full items-center transition-[color,transform] duration-300'
+												'hover:text-grey font-medium text-sm flex h-full w-full items-center transition-[color,transform] duration-300'
 											)}
 											href={item.href}
+											onClick={() => setNavSheetIsOpen(false)}
 										>
 											{item.label}
 										</Link>
