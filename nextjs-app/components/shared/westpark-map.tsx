@@ -1,6 +1,5 @@
 'use client'
 
-import 'mapbox-gl/dist/mapbox-gl.css'
 import Map from 'react-map-gl'
 
 export default function WestparkMap() {
