@@ -3,32 +3,35 @@ import { ChevronUp } from 'lucide-react'
 
 const CONTENT = [
 	{
-		title: 'Getting Started',
-		value: 'getting-started',
-		content:
-			'Discover the fundamental concepts of Motion-Primitives. This section guides you through the installation process and provides an overview of how to integrate these components into your projects. Learn about the core functionalities and how to set up your first animation effectively.'
+		title: 'How far away is Westpark from Christchuch?',
+		value: 'distance',
+		content: 'Westpark Self Storage is a 20 minute drive from the Christchurch city center.'
 	},
 	{
-		title: 'Animation Properties',
-		value: 'animation-properties',
+		title: 'What security features do you have?',
+		value: 'security-features',
 		content:
-			'Explore the comprehensive range of animation properties available in Motion-Primitives. Understand how to manipulate timing, easing, and delays to create smooth, dynamic animations. This segment also covers the customization of animations to fit the flow and style of your web applications.'
+			'The site is fully fenced for complete security. Each individual unit comes with 24 hour 7 day a week swipe card access. Each storage unit also has its own power supply and lighting.'
 	},
 	{
-		title: 'Advanced Usage',
-		value: 'advanced-usage',
-		content:
-			'Dive deeper into advanced techniques and features of Motion-Primitives. Learn about chaining animations, creating complex sequences, and utilizing motion sensors for interactive animations. Gain insights on how to leverage these advanced features to enhance user experience and engagement.'
+		title: 'Do I get 24/7 access?',
+		value: 'access',
+		content: 'Yes. You get a swipe card that gives you 24/7 access to your unit.'
 	},
 	{
-		title: 'Community and Support',
-		value: 'community-and-support',
+		title: 'What am I allowed to store in the units?',
+		value: 'storage',
 		content:
-			'Engage with the Motion-Primitives community to gain additional support and insight. Find out how to participate in discussions, contribute to the project, and access a wealth of shared knowledge and resources. Learn about upcoming features, best practices, and how to get help with your specific use cases.'
+			'You can store household items, office furniture, materials, vehicles. Speak to us if there is anything you are unsure about.'
+	},
+	{
+		title: 'Is there a minimum term contract?',
+		value: 'contract-term',
+		content: 'We have no minimum term for contracts.'
 	}
 ]
 
-export function Faq2() {
+export function Faq() {
 	return (
 		<div className='py-24 sm:py-32'>
 			<div className='mx-auto max-w-7xl px-6 lg:px-8'>
@@ -38,7 +41,7 @@ export function Faq2() {
 							Frequently asked questions
 						</h2>
 						<p className='text-base text-zinc-500 dark:text-zinc-400'>
-							Here are some of the most common questions we receive from our users.
+							Find answers to some of the most common questions we receive.
 						</p>
 					</div>
 					<div className='col-span-2 border-t border-zinc-200 px-3 dark:border-zinc-700 sm:px-0 md:border-none'>

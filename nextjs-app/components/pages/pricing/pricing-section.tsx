@@ -48,7 +48,7 @@ export default function PricingSection() {
 					If you have any questions about our prices, give us a call and we can help talk you through the
 					options.
 				</h3>
-				<div className='mb-20 rounded-xl border'>
+				<div className='mb-36 rounded-xl border'>
 					<Table>
 						<TableHeader>
 							<TableRow>

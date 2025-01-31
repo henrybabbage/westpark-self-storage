@@ -1,6 +1,7 @@
 import map from '@/components/pages/contact/_assets/google-map-westpark-static.webp'
 import { ResponsiveImage } from '@/components/shared/responsive-image'
 import { Section } from '@/components/shared/section'
+import WestparkMap from '@/components/shared/westpark-map'
 
 export default function MapSection() {
 	return (
@@ -15,11 +16,7 @@ export default function MapSection() {
 			</div>
 
 			<div className='flex flex-col md:flex-row gap-8'>
-				<ResponsiveImage
-					src={map}
-					alt='Map showing Westpark Self Storage location'
-					className='mb-8 md:mb-20 flex-[2]'
-				/>
+				<WestparkMap />
 
 				<div className='space-y-8 flex-1'>
 					<div>
