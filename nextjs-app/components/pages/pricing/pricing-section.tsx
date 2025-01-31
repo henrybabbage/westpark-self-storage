@@ -1,5 +1,5 @@
 import { Section } from '@/components/shared/section'
-import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 
 type StorageUnit = {
 	size: string
@@ -13,28 +13,28 @@ const storageUnits: StorageUnit[] = [
 	{
 		size: 'Small',
 		price: '$300',
-		area: '14m2',
+		area: '14m²',
 		dimensions: '4m x 3.5m',
 		recommendations: ['Boxes', 'Small Items']
 	},
 	{
 		size: 'Medium',
 		price: '$400',
-		area: '21m2',
+		area: '21m²',
 		dimensions: '6m x 3.5m',
 		recommendations: ['Furniture', 'Materials', 'Bikes', 'Scooters']
 	},
 	{
 		size: 'Large',
 		price: '$500',
-		area: '26m2',
+		area: '26m²',
 		dimensions: '7.5m x 3.5m',
 		recommendations: ['Caravans', 'Cars', 'Trailers']
 	},
 	{
 		size: 'Extra Large',
 		price: '$500',
-		area: '28m2',
+		area: '28m²',
 		dimensions: '8m x 3.5m',
 		recommendations: ['Boats']
 	}
@@ -44,7 +44,7 @@ export default function PricingSection() {
 	return (
 		<Section id='pricing-table' align='center' subtitle='At Westpark we have 4 different size storage units.'>
 			<div className='flex flex-col gap-12'>
-				<h3 className="text-gray-500 font-sans max-w-prose">
+				<h3 className='text-gray-500 font-sans max-w-prose'>
 					If you have any questions about our prices, give us a call and we can help talk you through the
 					options.
 				</h3>
