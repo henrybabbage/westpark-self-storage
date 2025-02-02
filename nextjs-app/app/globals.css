@@ -63,10 +63,21 @@
 }
 
 @layer base {
-  * {
-    @apply border-border;
+    * {
+        @apply border-border;
     }
-  body {
-    @apply bg-background text-foreground;
+    body {
+        @apply bg-background text-foreground;
+    }
+    .mapboxgl-ctrl-logo {
+        @apply !hidden
+    }
+
+    .mapboxgl-ctrl {
+        @apply !hidden
+    }
+
+    .mapboxgl-ctrl-bottom-left {
+        @apply !hidden
     }
 }
