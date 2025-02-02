@@ -1,7 +1,7 @@
 import map from '@/components/pages/contact/_assets/google-map-westpark-static.webp'
 import { ResponsiveImage } from '@/components/shared/responsive-image'
 import { Section } from '@/components/shared/section'
-import WestparkMap from '@/components/shared/westpark-map'
+import WestparkMap from '@/components/shared/interactive-map'
 
 export default function MapSection() {
 	return (

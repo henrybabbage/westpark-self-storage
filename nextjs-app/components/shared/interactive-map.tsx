@@ -1,8 +1,9 @@
 'use client'
 
 import Map from 'react-map-gl'
+import 'mapbox-gl/dist/mapbox-gl.css'
 
-export default function WestparkMap() {
+export default function InteractiveMap() {
 	return (
 		<Map
 			mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}
