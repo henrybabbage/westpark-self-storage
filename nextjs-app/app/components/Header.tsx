@@ -68,7 +68,7 @@ export default function Header() {
 	return (
 		<header className='fixed flex items-center left-0 right-0 top-0 z-50 bg-white'>
 			<div className='flex mx-auto container items-center justify-between w-full py-6'>
-				<Link className='flex font-medium hover:text-brand-800' href='/'>
+				<Link className='flex cursor-pointer font-medium hover:text-brand-800' href='/'>
 					Westpark Self Storage
 				</Link>
 
@@ -138,7 +138,7 @@ export default function Header() {
 									<li key={item.id} className='py-0.5'>
 										<Link
 											className={cn(
-												'hover:text-grey font-medium text-sm flex h-full w-full items-center transition-[color,transform] duration-300'
+												'hover:text-grey cursor-pointer font-medium text-sm flex h-full w-full items-center transition-[color,transform] duration-300'
 											)}
 											href={item.href}
 											onClick={() => setNavSheetIsOpen(false)}
