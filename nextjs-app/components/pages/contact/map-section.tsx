@@ -1,24 +1,21 @@
-import map from '@/components/pages/contact/_assets/google-map-westpark-static.webp'
-import { ResponsiveImage } from '@/components/shared/responsive-image'
-import { Section } from '@/components/shared/section'
 import WestparkMap from '@/components/shared/interactive-map'
+import { Section } from '@/components/shared/section'
 
 export default function MapSection() {
 	return (
-		<Section id='map' className='gap-12 flex flex-col'>
-			<div className='gap-4 flex flex-col'>
-				<h2 className='text-5xl font-bold'>{"We're close to all of the main transport hubs."}</h2>
-				<p className='text-xl'>
-					{
-						"If you would like visit our storage units, don't hesitate to give us a call and we'll be happy to show you our facilities."
-					}
-				</p>
-			</div>
+		<Section
+			id='map'
+			className='gap-12 flex flex-col'
+			align='center'
+			subtitle="We're close to all of the main transport hubs."
+			description="If you would like visit our storage units, don't hesitate to give us a call and we'll be happy to show you our facilities."
+		>
+			<div className='grid grid-cols-1 md:grid-cols-2 gap-8 w-full'>
+				<div className='col-span-1'>
+					<WestparkMap />
+				</div>
 
-			<div className='flex flex-col md:flex-row gap-8'>
-				<WestparkMap />
-
-				<div className='space-y-8 flex-1'>
+				<div className='col-span-1 space-y-8 pl-0 md:pl-24'>
 					<div>
 						<h3 className='font-medium mb-2'>Address</h3>
 						<p>
