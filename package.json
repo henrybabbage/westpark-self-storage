@@ -1,6 +1,6 @@
 {
   "name": "westpark-self-storage",
-  "description": "Next.js + Sanity: A Powerful Website Starter with Real-time Visual Editing",
+  "description": "Westpark Self Storage is a self storage facility in Westpark, Christchurch, New Zealand",
   "scripts": {
     "dev": "npm-run-all --parallel dev:*",
     "dev:next": "npm run dev --workspace=nextjs-app",
@@ -8,34 +8,27 @@
     "import-sample-data": "cd studio && sanity dataset import sample-data.tar.gz --replace"
   },
   "keywords": [
-    "Sanity",
-    "Next.js",
-    "Headless CMS",
-    "Visual Editing",
-    "Live Content API (LCAPI)",
-    "Real-time"
+    "Westpark Self Storage",
+    "Self Storage",
+    "Storage",
+    "Storage Facility",
+    "Storage Unit",
+    "Storage Space",
+    "Storage Solutions",
+    "Storage Company",
+    "Westpark",
+    "Christchurch",
+    "New Zealand"
   ],
   "bugs": {
     "url": "https://github.com/sanity-io/sanity-template-nextjs-clean/issues"
   },
-  "homepage": "https://github.com/sanity-io/sanity-template-nextjs-clean#readme",
+  "homepage": "https://www.westparkselfstorage.co.nz",
   "workspaces": [
     "studio",
     "nextjs-app"
   ],
   "devDependencies": {
-    "@types/google.maps": "^3.58.1",
     "npm-run-all": "^4.1.5"
-  },
-  "dependencies": {
-    "@googlemaps/react-wrapper": "^1.1.42",
-    "@types/mapbox-gl": "^3.4.1",
-    "lenis": "^1.1.20",
-    "mapbox-gl": "^3.9.4",
-    "motion": "^12.0.6",
-    "next": "^15.1.5",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-map-gl": "^7.1.9"
   }
 }
