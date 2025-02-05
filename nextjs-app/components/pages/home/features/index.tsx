@@ -13,38 +13,38 @@ const features = [
 	{
 		icon: Home,
 		title: 'Ground level access',
-		description: 'Our units have modern security monitoring.'
+		description: 'Extra wide turning circle for trucks and trailers.'
 	},
 	{
 		icon: MapPin,
 		title: 'Central location and parking onsite',
-		description: 'Our units have modern security monitoring.'
+		description: 'Close to SH1, airport, and main arterial routes.'
 	},
 	{
 		icon: CreditCard,
 		title: '24/7 swipe access',
-		description: 'Our units have modern security monitoring.'
+		description: 'Access your unit 24/7 with a swipe card.'
 	},
 	{
 		icon: Sun,
-		title: 'Unit power supply and lighting',
-		description: 'Our units have modern security monitoring.'
+		title: 'Unit power',
+		description: 'Every unit has individual power supply and lighting.'
 	},
 	{
 		icon: Car,
 		title: 'Suitable for vehicle storage',
-		description: 'Our units have modern security monitoring.'
+		description: 'Store your prized vehicles, family caravan or campervan.'
 	},
 	{
 		icon: Lock,
 		title: 'Alarmed and patrolled storage units',
-		description: 'Our units have modern security monitoring.'
+		description: 'CCTV monitoring of all units.'
 	}
 ]
 
 export default function Features() {
 	return (
-		<Section id='features' align='center'>
+		<Section id='features' align='center' subtitle='Features include:'>
 			<div className='pb-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
 				{features.map((feature, index) => (
 					<FeatureCard key={index} {...feature} />

@@ -15,28 +15,29 @@ const units = [
 		size: 'Small',
 		area: 14,
 		dimensions: '4m x 3.5m',
-		suitableFor: 'boxes, small items',
+		suitableFor: '1–2 bedroom household (dresser, table, chairs, sofa, bed), cartons.',
 		price: '$300pm (GST inclusive)'
 	},
 	{
 		size: 'Medium',
 		area: 21,
 		dimensions: '6m x 3.5m',
-		suitableFor: 'materials, motorbike',
+		suitableFor: '2 bedrooms, small office, trade tools and equipment.',
 		price: '$400pm (GST inclusive)'
 	},
 	{
 		size: 'Large',
 		area: 26,
 		dimensions: '7.5m x 3.5m',
-		suitableFor: 'car, three bedroom house',
+		suitableFor: 'Vehicles, 3 bedroom house, commercial inventory, trade tools and equipment.',
 		price: '$500pm (GST inclusive)'
 	},
 	{
 		size: 'Extra-Large',
 		area: 28,
 		dimensions: '7.5m x 3.5m',
-		suitableFor: 'camper van, caravan, boat',
+		suitableFor:
+			'Caravan, campervan, small truck, 4 bedroom house, office furniture, trade and commercial inventory.',
 		price: '$500pm (GST inclusive)'
 	}
 ]
