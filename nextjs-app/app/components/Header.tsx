@@ -1,7 +1,15 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
+import {
+	Sheet,
+	SheetClose,
+	SheetContent,
+	SheetFooter,
+	SheetHeader,
+	SheetTitle,
+	SheetTrigger
+} from '@/components/ui/sheet'
 import { cn } from '@/utils/cn'
 import { useMotionValueEvent, useScroll } from 'framer-motion'
 import Link from 'next/link'
@@ -58,8 +66,8 @@ export default function Header() {
 	}, [setNavSheetIsOpen])
 
 	return (
-		<header className='fixed lg:container flex items-center left-0 right-0 top-0 z-50 bg-white'>
-			<div className='flex items-center justify-between w-full py-6 px-6'>
+		<header className='fixed flex items-center left-0 right-0 top-0 z-50 bg-white'>
+			<div className='flex mx-auto container items-center justify-between w-full py-6'>
 				<Link className='flex font-medium hover:text-brand-800' href='/'>
 					Westpark Self Storage
 				</Link>
@@ -92,24 +100,36 @@ export default function Header() {
 
 				<Sheet open={navSheetIsOpen} onOpenChange={setNavSheetIsOpen}>
 					<SheetTrigger asChild className='block md:hidden'>
-						<Button variant='minimal' size="minimal">Menu</Button>
+						<Button variant='minimal' size='minimal'>
+							Menu
+						</Button>
 					</SheetTrigger>
 					<SheetContent
 						onOpenAutoFocus={(e) => e.preventDefault()}
 						onCloseAutoFocus={(e) => e.preventDefault()}
 						side='none'
-						className='flex flex-col gap-y-24 py-6 px-6 md:hidden bg-background left-0 right-0 top-0 h-full w-full'
+						className='container mx-auto flex flex-col gap-y-24 py-6 px-6 md:hidden bg-background left-0 right-0 top-0 h-full w-full'
 					>
-						<SheetHeader className=''>
-							<SheetTitle className=''>
+						<SheetHeader className='flex w-full justify-between items-baseline flex-nowrap'>
+							<SheetTitle className='m-0'>
 								<Link
-									className='flex items-start font-medium hover:text-brand-800'
+									className='font-medium text-sm hover:text-brand-800 w-fit'
 									href='/'
 									onClick={() => setNavSheetIsOpen(false)}
 								>
 									Westpark Self Storage
 								</Link>
 							</SheetTitle>
+							<SheetClose asChild>
+								<button
+									aria-label='Close menu'
+									onClick={() => setNavSheetIsOpen(false)}
+									className='w-fit text-sm text-primary hover:text-primary/50'
+								>
+									Close
+									<span className='sr-only'>Close</span>
+								</button>
+							</SheetClose>
 						</SheetHeader>
 
 						<nav className=''>
