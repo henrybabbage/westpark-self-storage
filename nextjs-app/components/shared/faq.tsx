@@ -28,6 +28,11 @@ const CONTENT = [
 		title: 'Is there a minimum term contract?',
 		value: 'contract-term',
 		content: 'We have no minimum term for contracts.'
+	},
+	{
+		title: 'Do you offer discounts?',
+		value: 'discounts',
+		content: 'We offer discounts for multiple unit hire or for long term contracts. Contact us to discuss.'
 	}
 ]
 
