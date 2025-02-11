@@ -28,11 +28,11 @@ export default function MapSection() {
 					</div>
 
 					<div>
-						<p className='mb-2'>Stan McFerrier</p>
+						<p className='mb-2'>Stan</p>
 						<p>
-							T. 0274 977407
+							0274 977407
 							<br />
-							E. westparkstorageunits@gmail.com
+							westparkstorageunits@gmail.com
 						</p>
 					</div>
 
