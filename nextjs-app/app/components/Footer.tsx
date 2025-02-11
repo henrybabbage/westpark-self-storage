@@ -28,7 +28,7 @@ export default function Footer() {
 					{/* Contact Column */}
 					<div>
 						<h3 className='font-medium mb-4'>Contact</h3>
-						<p className=''>Stan McFerrier</p>
+						<p className=''>Stan</p>
 						<p className=''>T. 0274 977407</p>
 						<p>E. westparkstorageunits@gmail.com</p>
 					</div>

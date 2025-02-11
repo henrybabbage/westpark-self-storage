@@ -32,7 +32,7 @@ const FEATURES = [
 	},
 	{
 		id: 'item4',
-		title: 'Community facilities',
+		title: 'Communal facilities',
 		content: 'Westpark Self Storage also provides a communal kitchen and toilet facility on site.',
 		image: access
 	}

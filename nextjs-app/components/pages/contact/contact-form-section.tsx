@@ -35,13 +35,11 @@ export default function ContactFormSection() {
 			<div className='flex flex-col lg:flex-row gap-8 lg:gap-16 w-full mt-20 lg:mt-0'>
 				<div className='space-y-6 lg:w-1/3'>
 					<p className='text-sm sm:text-base'>
-						If you would like to discuss the price of a unit, please do not hesitate to call Stan McFerrier
-						on 0274 977407.
+						If you have any queries, please do not hesitate to call us on 0274 977407.
 					</p>
 
 					<p className='text-sm sm:text-base'>
-						Alternatively, please complete the form on this page and Stan will get back to you promptly on a
-						price for your requested unit and whether it is available.
+						Alternatively, please complete the form on this page and we will get back to you promptly.
 					</p>
 				</div>
 

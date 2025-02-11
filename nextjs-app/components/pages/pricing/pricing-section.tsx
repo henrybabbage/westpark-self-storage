@@ -42,12 +42,12 @@ const storageUnits: StorageUnit[] = [
 
 export default function PricingSection() {
 	return (
-		<Section id='pricing-table' align='center' subtitle='At Westpark we have 4 different size storage units.'>
+		<Section
+			id='pricing-table'
+			align='center'
+			subtitle='If you have any questions about what sized unit best suits your needs, give us a call and we can help talk you through the options.'
+		>
 			<div className='flex flex-col gap-12'>
-				<h3 className='text-gray-500 font-sans max-w-prose'>
-					If you have any questions about our prices, give us a call and we can help talk you through the
-					options.
-				</h3>
 				<div className='mb-36 rounded-xl border'>
 					<Table>
 						<TableHeader>

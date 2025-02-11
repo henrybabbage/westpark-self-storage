@@ -15,29 +15,29 @@ const units = [
 		size: 'Small',
 		area: 14,
 		dimensions: '4m x 3.5m',
-		suitableFor: '1–2 bedroom household (dresser, table, chairs, sofa, bed), cartons.',
+		suitableFor: 'Contents of 1–2 bedroom flat (dresser, table, chairs, sofa, bed), approx. 250 cartons.',
 		price: '$300pm (GST inclusive)'
 	},
 	{
 		size: 'Medium',
 		area: 21,
 		dimensions: '6m x 3.5m',
-		suitableFor: '2 bedrooms, small office, trade tools and equipment.',
+		suitableFor: 'Contents of 2 bedrooms, small office, trade tools and equipment.',
 		price: '$400pm (GST inclusive)'
 	},
 	{
 		size: 'Large',
 		area: 26,
 		dimensions: '7.5m x 3.5m',
-		suitableFor: 'Vehicles, 3 bedroom house, commercial inventory, trade tools and equipment.',
+		suitableFor: 'Car or boat, contents of 3 bedroom house, commercial inventory, trade tools and equipment.',
 		price: '$500pm (GST inclusive)'
 	},
 	{
 		size: 'Extra-Large',
 		area: 28,
-		dimensions: '7.5m x 3.5m',
+		dimensions: '8m x 3.5m',
 		suitableFor:
-			'Caravan, campervan, small truck, 4 bedroom house, office furniture, trade and commercial inventory.',
+			'Caravan, campervan, small truck, contents of 4 bedroom house, office furniture, trade and commercial inventory.',
 		price: '$500pm (GST inclusive)'
 	}
 ]
@@ -47,7 +47,7 @@ export default function Units() {
 		<Section
 			id='units'
 			align='center'
-			subtitle='We have 4 different sized storage units available. Each unit has a door height of 3m.'
+			subtitle='We offer 4 different sized storage units. Each unit has a door height of 2.5m.'
 		>
 			<div className='pb-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2'>
 				{units.map((unit) => (
@@ -66,7 +66,7 @@ function UnitCard({ size, area, dimensions, suitableFor, price }: UnitCardProps)
 				<h3 className='text-3xl font-light'>{size}</h3>
 			</CardHeader>
 			<CardContent className='flex flex-col gap-4'>
-				<p className='text-2xl font-light'>Area: {area}m²</p>
+				<p className='text-2xl font-light'>Floor area: {area}m²</p>
 				<div className='flex flex-col gap-1'>
 					<p className='text-sm'>{dimensions}</p>
 					<p className='text-sm'>Suitable for: {suitableFor}</p>

@@ -3,15 +3,15 @@ import { ChevronUp } from 'lucide-react'
 
 const CONTENT = [
 	{
-		title: 'How far away is Westpark from Christchuch?',
+		title: 'How far away is Westpark from the city centre?',
 		value: 'distance',
-		content: 'Westpark Self Storage is a 20 minute drive from the Christchurch city center.'
+		content: 'Westpark Self Storage is a 20 minute drive from the Christchurch city centre.'
 	},
 	{
 		title: 'What security features do you have?',
 		value: 'security-features',
 		content:
-			'The site is fully fenced for complete security. Each individual unit comes with 24 hour 7 day a week swipe card access. Each storage unit also has its own power supply and lighting.'
+			'The site is fully fenced for complete security. Each tenant is provided a personalised swipe card to access the facility. We prioritise the safety of your possessions with enhanced security measures, including CCTV surveillance, alarm systems and secure electronic gate access. Our contracted security firm will react immediately to any alarm activation.'
 	},
 	{
 		title: 'Do I get 24/7 access?',
@@ -22,12 +22,12 @@ const CONTENT = [
 		title: 'What am I allowed to store in the units?',
 		value: 'storage',
 		content:
-			'You can store household items, office furniture, materials, vehicles. Speak to us if there is anything you are unsure about.'
+			'You can store most things, including household items, office furniture, commercial goods and equipment, boats, trailers, motor vehicles. However, for safety and legal reasons, you cannot store hazardous materials, flammable items, perishable goods, living things, or illegal substances. Speak to us if there is anything you are unsure about.'
 	},
 	{
 		title: 'Is there a minimum term contract?',
 		value: 'contract-term',
-		content: 'We have no minimum term for contracts.'
+		content: 'We have a minimum rental period of one month.'
 	},
 	{
 		title: 'Do you offer discounts?',

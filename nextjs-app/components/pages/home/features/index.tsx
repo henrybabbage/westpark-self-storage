@@ -37,7 +37,7 @@ const features = [
 	},
 	{
 		icon: Lock,
-		title: 'Alarmed and patrolled storage units',
+		title: 'Alarmed and monitored storage units',
 		description: 'CCTV monitoring of all units.'
 	}
 ]
