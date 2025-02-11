@@ -68,7 +68,7 @@ export function FeatureToggle() {
 							src={FEATURES.find((item) => item.id === activeAccordionId)?.image!}
 							alt='Accordion Image'
 							sizes='50vw'
-							className='aspect-square h-full w-full object-cover'
+							className='aspect-[2/3] h-full w-full object-cover'
 							key={activeAccordionId}
 						/>
 						<div className='absolute inset-0 bg-black opacity-20'></div>
