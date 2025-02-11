@@ -7,7 +7,7 @@ export default function FacilityImage() {
 		<Section
 			id='facility-image'
 			align='center'
-			subtitle="From the contents of an office to a collectible car or the family caravan, we'll keep it safe and dry for you."
+			subtitle='From the contents of an office to a collectible car or the family caravan, we can offer the perfect storage solution for your needs.'
 		>
 			<ResponsiveImage src={facility} alt='Westpark Self Storage' className='mb-20' />
 		</Section>

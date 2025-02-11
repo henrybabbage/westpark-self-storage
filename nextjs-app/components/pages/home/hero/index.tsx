@@ -35,7 +35,8 @@ function HeroCTA() {
 		<div className='relative flex flex-col gap-8'>
 			<div className='flex flex-col gap-4 max-w-screen-md'>
 				<h3 className='font-medium text-lg leading-snug text-balance text-neutral-600'>
-					Select from our range of secure self storage units providing 24 hour access 7 days a week. Call today, store tomorrow!
+					Select from our range of secure self storage units providing 24 hour access 7 days a week. Short
+					term or long term, we have an affordable solution for you. Call today, store tomorrow!
 				</h3>
 			</div>
 			<div className='flex w-full gap-4 items-start justify-start'>
