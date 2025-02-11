@@ -15,26 +15,25 @@ export default function Footer() {
 				</div>
 
 				{/* Bottom Grid */}
-				<div className='grid grid-cols-1 md:grid-cols-3 gap-8 items-end'>
+				<div className='grid grid-cols-1 lg:grid-cols-12 gap-4 items-end'>
 					{/* Logo Column */}
-					<div className='flex flex-col items-start gap-4'>
-						<div className='items-center flex flex-col gap-4'>
-							<Icons.logo className='h-8 w-auto stroke-white' />
-							<h2 className='text-white font-medium font-slab text-3xl'>Westpark Self Storage</h2>
+					<div className='flex flex-col items-start gap-4 lg:col-span-5'>
+						<div className='items-center flex flex-col flex-nowrap gap-4'>
+							<Icons.logo className='h-8 w-auto stroke-white' /><h2 className='text-white font-medium font-slab text-3xl whitespace-nowrap'>Westpark Self Storage</h2>
 						</div>
 						<p className='text-sm'>© {currentYear} Westpark Self Storage</p>
 					</div>
 
 					{/* Contact Column */}
-					<div>
+					<div className='lg:col-start-6 lg:col-span-3'>
 						<h3 className='font-medium mb-4'>Contact</h3>
 						<p className=''>Stan</p>
-						<p className=''>T. 0274 977407</p>
-						<p>E. westparkstorageunits@gmail.com</p>
+						<p className=''>0274 977407</p>
+						<p>westparkstorageunits@gmail.com</p>
 					</div>
 
 					{/* Address Column */}
-					<div>
+					<div className='lg:col-start-10 lg:col-span-3'>
 						<h3 className='font-medium mb-4'>Address</h3>
 						<p>Westpark Self Storage</p>
 						<p>31 Connaught Drive, Hornby,</p>
