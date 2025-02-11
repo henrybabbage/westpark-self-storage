@@ -32,7 +32,7 @@
         "lucide-react": "^0.473.0",
         "mapbox-gl": "^3.9.4",
         "motion": "^11.18.2",
-        "next": "^15.1.6",
+        "next": "^15.1.7",
         "next-sanity": "^9.8.18",
         "postcss": "^8.4.49",
         "react": "^19.0.0",
