@@ -5,7 +5,6 @@ export default function MapSection() {
 	return (
 		<Section
 			id='map'
-			className='gap-12 flex flex-col'
 			align='center'
 			subtitle="We're close to all of the main transport hubs."
 			description="If you would like visit our storage units, don't hesitate to give us a call and we'll be happy to show you our facilities."
