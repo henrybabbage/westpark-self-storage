@@ -16,7 +16,7 @@ const units = [
 		size: 'Small',
 		area: 14,
 		dimensions: '4m x 3.5m',
-		height: 'Door height 2.5m',
+		height: 'Door height: 2.5m',
 		suitableFor: 'Contents of 1–2 bedroom flat (dresser, table, chairs, sofa, bed), approx. 250 cartons.',
 		price: '$300pm (GST inclusive)'
 	},
@@ -24,7 +24,7 @@ const units = [
 		size: 'Medium',
 		area: 21,
 		dimensions: '6m x 3.5m',
-		height: 'Door height 2.5m',
+		height: 'Door height: 2.5m',
 		suitableFor: 'Contents of 2 bedrooms, small office, trade tools and equipment.',
 		price: '$400pm (GST inclusive)'
 	},
@@ -32,7 +32,7 @@ const units = [
 		size: 'Large',
 		area: 26,
 		dimensions: '7.5m x 3.5m',
-		height: 'Door height 2.5m',
+		height: 'Door height: 2.5m',
 		suitableFor: 'Car or boat, contents of 3 bedroom house, commercial inventory, trade tools and equipment.',
 		price: '$500pm (GST inclusive)'
 	},
@@ -40,7 +40,7 @@ const units = [
 		size: 'Extra-Large',
 		area: 28,
 		dimensions: '8m x 3.5m',
-		height: 'Door height 2.5m',
+		height: 'Door height: 2.5m',
 		suitableFor:
 			'Caravan, campervan, small truck, contents of 4 bedroom house, office furniture, trade and commercial inventory.',
 		price: '$500pm (GST inclusive)'
@@ -64,12 +64,12 @@ function UnitCard({ size, area, dimensions, height, suitableFor, price }: UnitCa
 		<Card className='bg-brand-800 text-white h-full min-h-[340px] lg:min-h-[420px] w-auto flex flex-col justify-between'>
 			<CardHeader className='pb-2'>
 				<Warehouse className='w-8 h-8 mb-2' />
-				<h3 className='text-3xl font-light'>{size}</h3>
+				<h3 className='text-3xl font-light'>{size} ({area}m²)</h3>
 			</CardHeader>
 			<CardContent className='flex flex-col gap-4'>
-				<p className='text-2xl font-light'>Floor area: {area}m²</p>
+				<p className='text-2xl font-light'></p>
 				<div className='flex flex-col gap-1'>
-					<p className='text-sm'>{dimensions}</p>
+					<p className='text-sm'>Area: {dimensions}</p>
 					<p className='text-sm'>{height}</p>
 					<p className='text-sm'>Suitable for: {suitableFor}</p>
 					<p className='text-sm'>{price}</p>
