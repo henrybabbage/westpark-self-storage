@@ -8,7 +8,7 @@ const CONTENT = [
 		content: 'Westpark Self Storage is a 20 minute drive from the Christchurch city centre.'
 	},
 	{
-		title: 'What security features do you have?',
+		title: 'What are the security features?',
 		value: 'security-features',
 		content:
 			'The site is fully fenced for complete security. Each tenant is provided a personalised swipe card to access the facility. We prioritise the safety of your possessions with enhanced security measures, including CCTV surveillance, alarm systems and secure electronic gate access. Our contracted security firm will react immediately to any alarm activation.'
