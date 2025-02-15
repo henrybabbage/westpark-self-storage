@@ -25,8 +25,10 @@ export function Lenis({ root, options }: { root?: boolean; options?: LenisOption
 			ref={lenisRef}
 			root={root}
 			options={{
-                ...options,
-                anchors: true,
+				...options,
+				anchors: {
+					offset: -100
+				},
 				autoRaf: false,
 				prevent: (node: Element) => {
 					return node.nodeName === 'VERCEL-LIVE-FEEDBACK' || node.hasAttribute('data-scroll-locked')

@@ -9,23 +9,26 @@ export default function Footer() {
 				{/* Top Phone Number */}
 				<div className='flex items-center mb-20'>
 					<h3 className='text-4xl font-medium'>
-						<span className='md:inline'>Call us on </span>
-						<span className='block md:inline'>0274 977407</span>
+						<span className='sm:inline'>Call us on </span>
+						<span className='block sm:inline'>0274 977407</span>
 					</h3>
 				</div>
 
 				{/* Bottom Grid */}
-				<div className='grid grid-cols-1 lg:grid-cols-12 gap-4 items-end'>
+				<div className='grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-4 items-end'>
 					{/* Logo Column */}
-					<div className='flex flex-col items-start gap-4 lg:col-span-5'>
+					<div className='flex flex-col items-start gap-4 md:col-start-1 md:col-span-1 lg:col-span-5'>
 						<div className='items-center flex flex-col flex-nowrap gap-4'>
-							<Icons.logo className='h-8 w-auto stroke-white' /><h2 className='text-white font-medium font-slab text-3xl whitespace-nowrap'>Westpark Self Storage</h2>
+							<Icons.logo className='h-8 w-auto stroke-white' />
+							<h2 className='text-white font-medium font-slab text-3xl whitespace-nowrap'>
+								Westpark Self Storage
+							</h2>
 						</div>
 						<p className='text-sm'>© {currentYear} Westpark Self Storage</p>
 					</div>
 
 					{/* Contact Column */}
-					<div className='lg:col-start-6 lg:col-span-3'>
+					<div className='md:col-span-1 md:col-start-2 lg:col-start-6 lg:col-span-3'>
 						<h3 className='font-medium mb-4'>Contact</h3>
 						<p className=''>Stan</p>
 						<p className=''>0274 977407</p>
@@ -33,7 +36,7 @@ export default function Footer() {
 					</div>
 
 					{/* Address Column */}
-					<div className='lg:col-start-10 lg:col-span-3'>
+					<div className='md:col-span-1 md:col-start-2 lg:col-start-10 lg:col-span-3'>
 						<h3 className='font-medium mb-4'>Address</h3>
 						<p>Westpark Self Storage</p>
 						<p>31 Connaught Drive, Hornby,</p>

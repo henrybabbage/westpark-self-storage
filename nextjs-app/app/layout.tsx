@@ -2,7 +2,7 @@ import './globals.css'
 
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata } from 'next'
-import { toPlainText, VisualEditing } from 'next-sanity'
+import { VisualEditing } from 'next-sanity'
 import { Inter } from 'next/font/google'
 import { draftMode } from 'next/headers'
 import { Toaster } from 'sonner'
@@ -11,10 +11,11 @@ import DraftModeToast from '@/app/components/DraftModeToast'
 import Footer from '@/app/components/Footer'
 import Header from '@/app/components/Header'
 import { slab } from '@/app/fonts'
-import * as demo from '@/sanity/lib/demo'
+import { TailwindIndicator } from '@/components/utilities/tailwind-indicator'
 import { sanityFetch, SanityLive } from '@/sanity/lib/live'
 import { settingsQuery } from '@/sanity/lib/queries'
 import { resolveOpenGraphImage } from '@/sanity/lib/utils'
+import { cn } from '@/utils/cn'
 import { handleError } from './client-utils'
 
 /**
@@ -27,11 +28,11 @@ export async function generateMetadata(): Promise<Metadata> {
 		// Metadata should never contain stega
 		stega: false
 	})
-    const title = "Westpark Self Storage"
-    // settings?.title || demo.title
-    const description =
+	const title = 'Westpark Self Storage'
+	// settings?.title || demo.title
+	const description =
 		'For a safe, clean and secure way to store your goods, speak to Westpark Self Storage in Christchurch.'
-    // settings?.description || demo.description
+	// settings?.description || demo.description
 
 	const ogImage = resolveOpenGraphImage(settings?.ogImage)
 	let metadataBase: URL | undefined = undefined
@@ -46,8 +47,8 @@ export async function generateMetadata(): Promise<Metadata> {
 			template: `%s | ${title}`,
 			default: title
 		},
-        description: description,
-        //  toPlainText(description)
+		description: description,
+		//  toPlainText(description)
 		openGraph: {
 			images: ogImage ? [ogImage] : []
 		}
@@ -64,7 +65,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 	const { isEnabled: isDraftMode } = await draftMode()
 
 	return (
-		<html lang='en' className={`${inter.variable} ${slab.variable} bg-white text-black`}>
+		<html lang='en' className={cn(inter.variable, slab.variable, 'bg-white text-black')}>
 			<body>
 				<section className='min-h-screen pt-24'>
 					{/* The <Toaster> component is responsible for rendering toast notifications used in /app/client-utils.ts and /app/components/DraftModeToast.tsx */}
@@ -83,6 +84,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 					<Footer />
 				</section>
 				<SpeedInsights />
+				<TailwindIndicator />
 			</body>
 		</html>
 	)
