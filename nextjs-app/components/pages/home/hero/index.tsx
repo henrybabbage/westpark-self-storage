@@ -40,7 +40,7 @@ function HeroCTA() {
 				</h3>
 			</div>
 			<div className='flex w-full gap-4 items-start justify-start'>
-				<Link href='/onsite-facilities' className={cn(buttonVariants({ variant: 'brand' }), 'text-lg')}>
+				<Link href='#units' className={cn(buttonVariants({ variant: 'brand' }), 'text-lg')}>
 					Compare units
 				</Link>
 				<Link href='/pricing' className={cn(buttonVariants({ variant: 'outline' }), 'text-lg')}>
