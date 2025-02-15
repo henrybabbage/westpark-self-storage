@@ -145,7 +145,7 @@ export default {
 				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
-				ring: 'hsl(var(--ring))',
+				ring: 'hsl(var(--ring))'
 			},
 			fontFamily: {
 				sans: ['var(--font-inter)'],
@@ -155,6 +155,20 @@ export default {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			animation: {
+				'slide-down': 'slide-down 300ms cubic-bezier(0.87, 0, 0.13, 1)',
+				'slide-up': 'slide-up 300ms cubic-bezier(0.87, 0, 0.13, 1)'
+			},
+			keyframes: {
+				'slide-down': {
+					from: { height: '0px' },
+					to: { height: 'var(--radix-accordion-content-height)' }
+				},
+				'slide-up': {
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0px' }
+				}
 			}
 		}
 	},

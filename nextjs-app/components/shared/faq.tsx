@@ -42,10 +42,10 @@ export function Faq() {
 			<div className='mx-auto max-w-7xl px-6 lg:px-8'>
 				<div className='grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-12'>
 					<div className='py-0 text-left md:py-4'>
-						<h2 className='mb-4 text-2xl font-medium text-zinc-900 dark:text-white'>
+						<h2 className='mb-4 text-3xl font-medium text-zinc-900 dark:text-white'>
 							Frequently asked questions
 						</h2>
-						<p className='text-base text-zinc-500 dark:text-zinc-400'>
+						<p className='text-lg text-zinc-500 dark:text-zinc-400'>
 							Find answers to some of the most common questions we receive.
 						</p>
 					</div>
@@ -55,15 +55,17 @@ export function Faq() {
 							transition={{ duration: 0.2, ease: 'easeInOut' }}
 						>
 							{CONTENT.map((item) => (
-								<AccordionItem key={item.value} value={item.value} className='py-4'>
-									<AccordionTrigger className='w-full text-left text-zinc-950 dark:text-zinc-50'>
+								<AccordionItem key={item.value} value={item.value} className='py-6'>
+									<AccordionTrigger className='w-full text-left text-lg text-zinc-950 dark:text-zinc-50'>
 										<div className='flex items-center justify-between'>
 											<div>{item.title}</div>
-											<ChevronUp className='h-4 w-4 text-zinc-950 transition-transform duration-200 group-data-[expanded]:-rotate-180 dark:text-zinc-50' />
+											<ChevronUp className='h-5 w-5 text-zinc-950 transition-transform duration-200 group-data-[expanded]:-rotate-180 dark:text-zinc-50' />
 										</div>
 									</AccordionTrigger>
 									<AccordionContent>
-										<p className='pt-2 text-zinc-500 dark:text-zinc-400'>{item.content}</p>
+										<p className='pt-3 text-base text-zinc-500 dark:text-zinc-400'>
+											{item.content}
+										</p>
 									</AccordionContent>
 								</AccordionItem>
 							))}

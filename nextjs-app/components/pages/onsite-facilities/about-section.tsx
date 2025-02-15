@@ -1,4 +1,4 @@
-import { FeatureToggle } from '@/components/shared/feature-toggle'
+import FeaturesSlideshow from '@/components/shared/features-slideshow'
 import { Section } from '@/components/shared/section'
 
 export default function AboutSection() {
@@ -8,7 +8,7 @@ export default function AboutSection() {
 			subtitle='Westpark has been providing Christchurch with reliable storage for over a decade.'
 			className='gap-8 flex flex-col'
 		>
-			<FeatureToggle />
+			<FeaturesSlideshow />
 		</Section>
 	)
 }
