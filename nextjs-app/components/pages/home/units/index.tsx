@@ -61,10 +61,12 @@ export default function Units() {
 
 function UnitCard({ size, area, dimensions, height, suitableFor, price }: UnitCardProps) {
 	return (
-		<Card className='bg-brand-800 text-white h-full min-h-[340px] lg:min-h-[420px] w-auto flex flex-col justify-between'>
+		<Card className='bg-brand-800 text-white h-full min-h-[300px] lg:min-h-[340px] xl:min-h-[420px] w-auto flex flex-col justify-between'>
 			<CardHeader className='pb-2'>
 				<Warehouse className='w-8 h-8 mb-2' />
-				<h3 className='text-3xl font-light'>{size} ({area}m²)</h3>
+				<h3 className='text-3xl font-light'>
+					{size} ({area}m²)
+				</h3>
 			</CardHeader>
 			<CardContent className='flex flex-col gap-4'>
 				<p className='text-2xl font-light'></p>
