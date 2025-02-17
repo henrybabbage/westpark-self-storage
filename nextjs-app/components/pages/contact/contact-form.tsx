@@ -6,18 +6,16 @@ import { Section } from '@/components/shared/section'
 import { Button } from '@/components/ui/button'
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import * as z from 'zod'
+import { contactFormSchema, type ContactFormValues } from './contact-form-schema'
 
-const formSchema = z.object({
-	name: z.string().min(1, 'Name is required'),
-	email: z.string().email('Invalid email address'),
-	message: z.string().min(1, 'Message is required')
-})
+export default function ContactForm() {
+	const [isSubmitting, setIsSubmitting] = useState(false)
+	const [submitError, setSubmitError] = useState<string | null>(null)
 
-export default function ContactFormSection() {
-	const form = useForm<z.infer<typeof formSchema>>({
-		resolver: zodResolver(formSchema),
+	const form = useForm<ContactFormValues>({
+		resolver: zodResolver(contactFormSchema),
 		defaultValues: {
 			name: '',
 			email: '',
@@ -25,9 +23,32 @@ export default function ContactFormSection() {
 		}
 	})
 
-	function onSubmit(values: z.infer<typeof formSchema>) {
-		// Handle form submission
-		console.log(values)
+	async function onSubmit(values: ContactFormValues) {
+		setIsSubmitting(true)
+		setSubmitError(null)
+
+		try {
+			const response = await fetch('/api/contact', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(values)
+			})
+
+			const data = await response.json()
+
+			if (!response.ok) {
+				throw new Error(data.error || 'Failed to send message')
+			}
+
+			form.reset()
+			// Optional: Add success toast/message here
+		} catch (error) {
+			setSubmitError(error instanceof Error ? error.message : 'Failed to send message')
+		} finally {
+			setIsSubmitting(false)
+		}
 	}
 
 	return (
@@ -94,12 +115,14 @@ export default function ContactFormSection() {
 							/>
 
 							<div className='flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4'>
+								{submitError && <p className='text-destructive text-sm'>{submitError}</p>}
 								<Button
 									variant='brand'
 									type='submit'
+									disabled={isSubmitting}
 									className='bg-brand-800 hover:bg-brand-900 text-white px-8 w-full sm:w-auto'
 								>
-									Send
+									{isSubmitting ? 'Sending...' : 'Send'}
 								</Button>
 							</div>
 						</form>

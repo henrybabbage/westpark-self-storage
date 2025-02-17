@@ -1,4 +1,4 @@
-import ContactFormSection from './contact-form-section'
+import ContactFormSection from './contact-form'
 import MapSection from './map-section'
 
 export default function ContactSection() {
