@@ -2,7 +2,8 @@ import { contactFormSchema } from '@/components/pages/contact/contact-form-schem
 import { NextResponse } from 'next/server'
 
 export async function POST(request: Request) {
-	const res = contactFormSchema.safeParse(request.body)
+	const body = await request.json()
+	const res = contactFormSchema.safeParse(body)
 
 	if (!res.success) {
 		const { errors } = res.error
