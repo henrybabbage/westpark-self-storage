@@ -1,10 +1,10 @@
 'use client'
 
+import RequiredInput from '@/components/shared/required-input'
+import RequiredTextArea from '@/components/shared/required-text-area'
 import { Section } from '@/components/shared/section'
 import { Button } from '@/components/ui/button'
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
-import { Textarea } from '@/components/ui/textarea'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import * as z from 'zod'
@@ -32,8 +32,9 @@ export default function ContactFormSection() {
 
 	return (
 		<Section id='form' className='relative' align='center' subtitle='Queries? Contact us here.'>
-			<div className='flex flex-col lg:flex-row gap-8 lg:gap-16 w-full mt-20 lg:mt-0'>
-				<div className='space-y-6 lg:w-1/3'>
+			<div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 w-full mt-20 lg:mt-0'>
+				{/* Text */}
+				<div className='space-y-6'>
 					<p className='text-sm sm:text-base'>
 						If you have any queries, please do not hesitate to call us on 0274 977407.
 					</p>
@@ -43,7 +44,8 @@ export default function ContactFormSection() {
 					</p>
 				</div>
 
-				<div className='lg:w-2/3'>
+				{/* Form */}
+				<div>
 					<Form {...form}>
 						<form onSubmit={form.handleSubmit(onSubmit)} className='space-y-4'>
 							<FormField
@@ -52,9 +54,11 @@ export default function ContactFormSection() {
 								render={({ field }) => (
 									<FormItem>
 										<FormControl>
-											<Input placeholder='Name:*' {...field} />
+											<RequiredInput label='Name' {...field} />
 										</FormControl>
-										<FormMessage />
+										<div className='h-5'>
+											<FormMessage />
+										</div>
 									</FormItem>
 								)}
 							/>
@@ -65,9 +69,11 @@ export default function ContactFormSection() {
 								render={({ field }) => (
 									<FormItem>
 										<FormControl>
-											<Input placeholder='Email:*' {...field} />
+											<RequiredInput label='Email' type='email' {...field} />
 										</FormControl>
-										<FormMessage />
+										<div className='h-5'>
+											<FormMessage />
+										</div>
 									</FormItem>
 								)}
 							/>
@@ -78,21 +84,23 @@ export default function ContactFormSection() {
 								render={({ field }) => (
 									<FormItem>
 										<FormControl>
-											<Textarea placeholder='Message:*' className='min-h-[200px]' {...field} />
+											<RequiredTextArea label='Message' className='min-h-[200px]' {...field} />
 										</FormControl>
-										<FormMessage />
+										<div className='h-5'>
+											<FormMessage />
+										</div>
 									</FormItem>
 								)}
 							/>
 
 							<div className='flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4'>
 								<Button
+									variant='brand'
 									type='submit'
 									className='bg-brand-800 hover:bg-brand-900 text-white px-8 w-full sm:w-auto'
 								>
 									Send
 								</Button>
-								<span className='text-sm text-gray-500 text-left sm:text-right'>*Required Field</span>
 							</div>
 						</form>
 					</Form>

@@ -42,23 +42,28 @@ const storageUnits: StorageUnit[] = [
 
 export default function PricingSection() {
 	return (
-		<Section id='pricing-table' align='center'>
-			<div className='flex flex-col gap-12 pt-12'>
-				<div className='rounded-xl border max-w-5xl mx-auto w-full'>
+		<Section
+			id='pricing-table'
+            align='center'
+            subtitle='We offer four different sized units.'
+			description='If you have any questions about what sized unit best suits your needs, give us a call and we can help talk you through the options.'
+		>
+			<div className='flex flex-col gap-12 pt-12 mb-36'>
+				<div className='overflow-hidden rounded-xl border border-primary max-w-5xl mx-auto w-full'>
 					<Table>
-						<TableHeader>
-							<TableRow>
-								<TableHead className='text-base'>Size</TableHead>
-								<TableHead className='text-base'>Price</TableHead>
-								<TableHead className='text-base'>Area</TableHead>
-								<TableHead className='text-base'>Dimensions</TableHead>
-								<TableHead className='text-base'>Recommendations</TableHead>
+						<TableHeader className='bg-brand-800'>
+							<TableRow className='border-none'>
+								<TableHead className='text-white text-base pl-8'>Size</TableHead>
+								<TableHead className='text-white text-base'>Price</TableHead>
+								<TableHead className='text-white text-base'>Area</TableHead>
+								<TableHead className='text-white text-base'>Dimensions</TableHead>
+								<TableHead className='text-white text-base'>Recommendations</TableHead>
 							</TableRow>
 						</TableHeader>
 						<TableBody>
 							{storageUnits.map((unit) => (
 								<TableRow key={unit.size} className='h-28'>
-									<TableCell className='font-medium text-lg'>{unit.size}</TableCell>
+									<TableCell className='font-medium text-lg pl-8'>{unit.size}</TableCell>
 									<TableCell className='text-base'>{unit.price}</TableCell>
 									<TableCell className='text-base'>{unit.area}</TableCell>
 									<TableCell className='text-base'>{unit.dimensions}</TableCell>
@@ -68,18 +73,12 @@ export default function PricingSection() {
 						</TableBody>
 						<TableFooter>
 							<TableRow>
-								<TableCell colSpan={5} className='text-base font-normal'>
+								<TableCell colSpan={5} className='pl-8 text-base font-normal'>
 									Prices are GST inclusive.
 								</TableCell>
 							</TableRow>
 						</TableFooter>
 					</Table>
-				</div>
-				<div className='max-w-7xl mb-36 mx-auto'>
-					<h3 className='text-center mx-0 mb-8 max-w-full text-3xl text-balance font-medium sm:max-w-full sm:text-4xl md:text-5xl lg:text-5xl leading-[1.2] lg:leading-[1.3] tracking-tight text-foreground'>
-						If you have any questions about what sized unit best suits your needs, give us a call and we can
-						help talk you through the options.
-					</h3>
 				</div>
 			</div>
 		</Section>

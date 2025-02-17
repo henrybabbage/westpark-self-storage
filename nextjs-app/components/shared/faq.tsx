@@ -39,7 +39,7 @@ const CONTENT = [
 export function Faq() {
 	return (
 		<div className='py-12 sm:py-12'>
-			<div className='mx-auto max-w-7xl px-6 lg:px-8'>
+			<div className='lg:mx-auto lg:max-w-7xl lg:px-8'>
 				<div className='grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-12'>
 					<div className='py-0 text-left md:py-4'>
 						<h2 className='mb-4 text-3xl font-medium text-zinc-900 dark:text-white'>
@@ -49,14 +49,14 @@ export function Faq() {
 							Find answers to some of the most common questions we receive.
 						</p>
 					</div>
-					<div className='col-span-2 border-t border-zinc-200 px-3 dark:border-zinc-700 sm:px-0 md:border-none'>
+					<div className='col-span-2 border-t border-zinc-200 px-0 dark:border-zinc-700 sm:px-0 md:border-none'>
 						<Accordion
 							className='flex w-full flex-col divide-y divide-zinc-200 dark:divide-zinc-700'
 							transition={{ duration: 0.2, ease: 'easeInOut' }}
 						>
 							{CONTENT.map((item) => (
 								<AccordionItem key={item.value} value={item.value} className='py-6'>
-									<AccordionTrigger className='w-full text-left text-lg text-zinc-950 dark:text-zinc-50'>
+									<AccordionTrigger className='w-full text-left text-base text-zinc-950 dark:text-zinc-50'>
 										<div className='flex items-center justify-between'>
 											<div>{item.title}</div>
 											<ChevronUp className='h-5 w-5 text-zinc-950 transition-transform duration-200 group-data-[expanded]:-rotate-180 dark:text-zinc-50' />

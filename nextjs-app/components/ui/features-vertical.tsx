@@ -163,11 +163,11 @@ export default function Features({
 
 	return (
 		<section ref={ref} id='features'>
-			<div className='container'>
-				<div className='max-w-6xl mx-auto'>
+			<div className='lg:container'>
+				<div className='max-w-full lg:max-w-7xl lg:mx-auto'>
 					<div className='mx-auto my-12 h-full grid lg:grid-cols-2 gap-10 items-center'>
 						<div
-							className={` hidden lg:flex order-1 lg:order-[0] ${
+							className={`hidden lg:flex order-1 lg:order-[0] ${
 								ltr ? 'lg:order-2 lg:justify-end' : 'justify-start'
 							}`}
 						>
@@ -241,13 +241,13 @@ export default function Features({
 								))}
 							</Accordion.Root>
 						</div>
-						<div className={`h-[350px] min-h-[200px] w-auto  ${ltr && 'lg:order-1'}`}>
+						<div className={`h-[450px] min-h-[300px] w-auto ${ltr && 'lg:order-1'}`}>
 							{data[currentIndex]?.image ? (
 								<motion.img
 									key={currentIndex}
 									src={data[currentIndex].image!.src}
 									alt='feature'
-									className='aspect-auto h-full w-full rounded-xl border border-neutral-300/50 object-cover object-left-top p-1 shadow-lg'
+									className='aspect-auto h-full w-full rounded-sm object-cover object-center'
 									initial={{ opacity: 0, scale: 0.98 }}
 									animate={{ opacity: 1, scale: 1 }}
 									exit={{ opacity: 0, scale: 0.98 }}
@@ -257,21 +257,21 @@ export default function Features({
 								<video
 									preload='auto'
 									src={data[currentIndex].video}
-									className='aspect-auto h-full w-full rounded-lg object-cover shadow-lg'
+									className='aspect-auto h-full w-full rounded-sm object-cover'
 									autoPlay
 									loop
 									muted
 								/>
 							) : (
-								<div className='aspect-auto h-full w-full rounded-xl border border-neutral-300/50 bg-gray-200 p-1'></div>
+								<div className='aspect-auto h-full w-full rounded-sm bg-gray-200'></div>
 							)}
 						</div>
 
 						<ul
 							ref={carouselRef}
-							className=' flex h-full snap-x flex-nowrap overflow-x-auto py-10 [-ms-overflow-style:none] [-webkit-mask-image:linear-gradient(90deg,transparent,black_20%,white_80%,transparent)] [mask-image:linear-gradient(90deg,transparent,black_20%,white_80%,transparent)] [scrollbar-width:none] lg:hidden [&::-webkit-scrollbar]:hidden snap-mandatory'
+							className=' flex h-full snap-x flex-nowrap overflow-x-auto py-10 [-ms-overflow-style:none] [-webkit-mask-image:linear-gradient(90deg,transparent,black_10%,white_90%,transparent)] [mask-image:linear-gradient(90deg,transparent,black_10%,white_90%,transparent)] [scrollbar-width:none] lg:hidden [&::-webkit-scrollbar]:hidden snap-mandatory'
 							style={{
-								padding: '50px calc(50%)'
+								padding: '50px calc(40%)'
 							}}
 						>
 							{data.map((item, index) => (
@@ -283,7 +283,7 @@ export default function Features({
 										scrollSnapAlign: 'center'
 									}}
 								>
-									<div className='absolute bottom-0 left-0 right-auto top-0 h-0.5 w-full overflow-hidden rounded-lg bg-neutral-300/50 dark:bg-neutral-300/30'>
+									<div className='absolute bottom-0 left-0 right-auto top-0 h-0.5 w-full overflow-hidden rounded-sm bg-neutral-300/50 dark:bg-neutral-300/30'>
 										<div
 											className={`absolute left-0 top-0 h-full ${
 												currentIndex === index ? 'w-full' : 'w-0'
