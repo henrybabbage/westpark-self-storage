@@ -20,7 +20,7 @@ export async function POST(request: Request) {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
-				'Authorization': `Bearer ${process.env.PLUNK_API_KEY}`
+				Authorization: `Bearer ${process.env.NEXT_PUBLIC_PLUNK_API_KEY}`
 			},
 			body: JSON.stringify({
 				to: process.env.EMAIL_NOTIFICATION_ADDRESS,
