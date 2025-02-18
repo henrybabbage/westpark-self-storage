@@ -6,11 +6,14 @@ import { Section } from '@/components/shared/section'
 import { Button } from '@/components/ui/button'
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { contactFormSchema, type ContactFormValues } from './contact-form-schema'
+import { ReCaptchaProvider, useReCaptcha } from 'next-recaptcha-v3'
 
 export default function ContactForm() {
+    const { loaded, error, executeRecaptcha } = useReCaptcha()
+	const [recaptchaToken, setRecaptchaToken] = useState<string>()
 	const [isSubmitting, setIsSubmitting] = useState(false)
 	const [submitError, setSubmitError] = useState<string | null>(null)
 	const [isSuccess, setIsSuccess] = useState(false)
@@ -23,6 +26,22 @@ export default function ContactForm() {
 			message: ''
 		}
 	})
+
+    useEffect(() => {
+		console.log('loaded', loaded)
+		console.log('error', error)
+
+		const generateToken = async () => {
+			try {
+				const newToken = await executeRecaptcha('signup')
+				console.log('newToken', newToken)
+				setRecaptchaToken(newToken)
+			} catch (error) {
+				console.error('Recaptcha error:', error)
+			}
+		}
+		if (loaded) generateToken()
+	}, [loaded, executeRecaptcha, error])
 
 	async function onSubmit(values: ContactFormValues) {
 		setIsSubmitting(true)
@@ -72,71 +91,77 @@ export default function ContactForm() {
 
 				{/* Form */}
 				<div>
-					<Form {...form}>
-						<form onSubmit={form.handleSubmit(onSubmit)} className='space-y-4'>
-							<FormField
-								control={form.control}
-								name='name'
-								render={({ field }) => (
-									<FormItem>
-										<FormControl>
-											<RequiredInput label='Name' {...field} />
-										</FormControl>
-										<div className='h-5'>
-											<FormMessage />
-										</div>
-									</FormItem>
-								)}
-							/>
+					<ReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}>
+						<Form {...form}>
+							<form onSubmit={form.handleSubmit(onSubmit)} className='space-y-4'>
+								<FormField
+									control={form.control}
+									name='name'
+									render={({ field }) => (
+										<FormItem>
+											<FormControl>
+												<RequiredInput label='Name' {...field} />
+											</FormControl>
+											<div className='h-5'>
+												<FormMessage />
+											</div>
+										</FormItem>
+									)}
+								/>
 
-							<FormField
-								control={form.control}
-								name='email'
-								render={({ field }) => (
-									<FormItem>
-										<FormControl>
-											<RequiredInput label='Email' type='email' {...field} />
-										</FormControl>
-										<div className='h-5'>
-											<FormMessage />
-										</div>
-									</FormItem>
-								)}
-							/>
+								<FormField
+									control={form.control}
+									name='email'
+									render={({ field }) => (
+										<FormItem>
+											<FormControl>
+												<RequiredInput label='Email' type='email' {...field} />
+											</FormControl>
+											<div className='h-5'>
+												<FormMessage />
+											</div>
+										</FormItem>
+									)}
+								/>
 
-							<FormField
-								control={form.control}
-								name='message'
-								render={({ field }) => (
-									<FormItem>
-										<FormControl>
-											<RequiredTextArea label='Message' className='min-h-[200px]' {...field} />
-										</FormControl>
-										<div className='h-5'>
-											<FormMessage />
-										</div>
-									</FormItem>
-								)}
-							/>
+								<FormField
+									control={form.control}
+									name='message'
+									render={({ field }) => (
+										<FormItem>
+											<FormControl>
+												<RequiredTextArea
+													label='Message'
+													className='min-h-[200px]'
+													{...field}
+												/>
+											</FormControl>
+											<div className='h-5'>
+												<FormMessage />
+											</div>
+										</FormItem>
+									)}
+								/>
 
-							<div className='flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4'>
-								{submitError && <p className='text-destructive text-sm'>{submitError}</p>}
-								<Button
-									variant='brand'
-									type='submit'
-									disabled={isSubmitting}
-									className='bg-brand-800 hover:bg-brand-900 text-white px-12 w-full sm:w-auto'
-								>
-									{isSubmitting ? 'Sending...' : 'Send'}
-								</Button>
-							</div>
-							<div className='h-6'>
-								{isSuccess && (
-									<p className='text-primary text-sm font-normal'>Thank you. Message sent.</p>
-								)}
-							</div>
-						</form>
-					</Form>
+								<div className='flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4'>
+									{submitError && <p className='text-destructive text-sm'>{submitError}</p>}
+									<Button
+										variant='brand'
+										type='submit'
+										disabled={isSubmitting}
+										className='bg-brand-800 hover:bg-brand-900 text-white px-12 w-full sm:w-auto'
+									>
+										{isSubmitting ? 'Sending...' : 'Send'}
+									</Button>
+								</div>
+								<div className='h-6'>
+									{isSuccess && (
+										<p className='text-primary text-sm font-normal'>Thank you. Message sent.</p>
+									)}
+								</div>
+							</form>
+						</Form>
+					</ReCaptchaProvider>
 				</div>
 			</div>
 		</Section>
