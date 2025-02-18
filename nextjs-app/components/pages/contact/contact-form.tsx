@@ -13,6 +13,7 @@ import { contactFormSchema, type ContactFormValues } from './contact-form-schema
 export default function ContactForm() {
 	const [isSubmitting, setIsSubmitting] = useState(false)
 	const [submitError, setSubmitError] = useState<string | null>(null)
+	const [isSuccess, setIsSuccess] = useState(false)
 
 	const form = useForm<ContactFormValues>({
 		resolver: zodResolver(contactFormSchema),
@@ -26,6 +27,7 @@ export default function ContactForm() {
 	async function onSubmit(values: ContactFormValues) {
 		setIsSubmitting(true)
 		setSubmitError(null)
+		setIsSuccess(false)
 
 		try {
 			console.log('Submitting form:', values) // Debug log
@@ -45,7 +47,7 @@ export default function ContactForm() {
 			}
 
 			form.reset()
-			// Optional: Add success toast/message here
+			setIsSuccess(true)
 		} catch (error) {
 			console.error('Form submission error:', error)
 			setSubmitError(error instanceof Error ? error.message : 'Failed to send message')
@@ -127,6 +129,11 @@ export default function ContactForm() {
 								>
 									{isSubmitting ? 'Sending...' : 'Send'}
 								</Button>
+							</div>
+							<div className='h-6'>
+								{isSuccess && (
+									<p className='text-primary text-sm font-normal'>Thank you. Message sent.</p>
+								)}
 							</div>
 						</form>
 					</Form>
