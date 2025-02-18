@@ -33,7 +33,7 @@ const Section = forwardRef<HTMLElement, SectionProps>(
 							{subtitle && (
 								<h3
 									className={cn(
-										'mx-0 mb-8 max-w-full text-3xl text-balance font-normal sm:max-w-full sm:text-4xl md:text-5xl lg:text-5xl leading-[1.2] lg:leading-[1.3] tracking-tight text-foreground',
+										'mb-6 max-w-full text-4xl text-balance font-normal sm:max-w-full sm:text-4xl md:text-5xl lg:text-5xl leading-[1.2] lg:leading-[1.3] tracking-tight text-foreground',
 										align === 'center' ? 'mx-auto' : align === 'right' ? 'ml-auto' : ''
 									)}
 								>
@@ -43,7 +43,7 @@ const Section = forwardRef<HTMLElement, SectionProps>(
 							{description && (
 								<p
 									className={cn(
-										'mt-6 text-lg leading-8 text-muted-foreground text-balance max-w-2xl',
+										'mt-6 text-base lg:text-lg leading-snug lg:leading-8 text-muted-foreground text-balance max-w-2xl',
 										align === 'center' ? 'mx-auto' : align === 'right' ? 'ml-auto' : ''
 									)}
 								>

@@ -61,11 +61,11 @@ export default function ContactForm() {
 			<div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 w-full mt-20 lg:mt-0'>
 				{/* Text */}
 				<div className='space-y-6'>
-					<p className='text-sm sm:text-base'>
+					<p className='text-base sm:text-base'>
 						If you have any queries, please do not hesitate to call us on 0274 977407.
 					</p>
 
-					<p className='text-sm sm:text-base'>
+					<p className='text-base sm:text-base'>
 						Alternatively, please complete the form on this page and we will get back to you promptly.
 					</p>
 				</div>
@@ -125,7 +125,7 @@ export default function ContactForm() {
 									variant='brand'
 									type='submit'
 									disabled={isSubmitting}
-									className='bg-brand-800 hover:bg-brand-900 text-white px-8 w-full sm:w-auto'
+									className='bg-brand-800 hover:bg-brand-900 text-white px-12 w-full sm:w-auto'
 								>
 									{isSubmitting ? 'Sending...' : 'Send'}
 								</Button>

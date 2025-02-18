@@ -1,9 +1,8 @@
 import { Section } from '@/components/shared/section'
 import TableWithVerticalLines from '@/components/shared/table-with-vertical-lines'
-import { Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 
 type StorageUnit = {
-    id: string
+	id: string
 	size: string
 	price: string
 	area: string
@@ -50,14 +49,12 @@ export default function PricingSection() {
 	return (
 		<Section
 			id='pricing-table'
-            align='center'
-            subtitle='We offer four different sized units.'
+			align='center'
+			subtitle='We offer four different sized units.'
 			description='If you have any questions about what sized unit best suits your needs, give us a call and we can help talk you through the options.'
 		>
-			<div className='flex flex-col gap-12 pt-12 mb-36'>
-				<div className='overflow-hidden rounded-none border border-primary max-w-5xl mx-auto w-full'>
-					<TableWithVerticalLines data={storageUnits} />
-				</div>
+			<div className='mt-6 lg:mt-8 mb-36'>
+				<TableWithVerticalLines data={storageUnits} />
 			</div>
 		</Section>
 	)

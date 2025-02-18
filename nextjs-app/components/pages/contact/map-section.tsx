@@ -17,7 +17,7 @@ export default function MapSection() {
 				<div className='col-span-1 space-y-8 pl-0 md:pl-24'>
 					<div>
 						<h3 className='font-medium mb-2'>Address</h3>
-						<p>
+						<p className='font-normal'>
 							Westpark Self Storage
 							<br />
 							31 Connaught Drive, Hornby,
@@ -28,7 +28,7 @@ export default function MapSection() {
 
 					<div>
 						<h3 className='font-medium mb-2'>Contact</h3>
-						<p>
+						<p className='font-normal'>
 							Stan
 							<br />
 							0274 977407
@@ -39,7 +39,7 @@ export default function MapSection() {
 
 					<div>
 						<h3 className='font-medium mb-2'>Opening hours</h3>
-						<p>
+						<p className='font-normal'>
 							Monday – Sunday
 							<br />
 							24 hours

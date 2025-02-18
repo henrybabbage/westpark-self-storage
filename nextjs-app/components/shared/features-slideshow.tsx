@@ -1,4 +1,4 @@
-import facilities from '@/components/pages/onsite-facilities/_assets/facilities.webp'
+import communal from '@/components/pages/onsite-facilities/_assets/communal.webp'
 import interior from '@/components/pages/onsite-facilities/_assets/interior.webp'
 import security from '@/components/pages/onsite-facilities/_assets/security.webp'
 import storage from '@/components/pages/onsite-facilities/_assets/storage-loading.webp'
@@ -34,7 +34,7 @@ const FEATURES = [
 		id: 4,
 		title: 'Communal facilities',
 		content: 'Westpark Self Storage also provides a communal kitchen and toilet facility on site.',
-		image: facilities,
+		image: communal,
 		icon: <Coffee className='w-6 h-6 text-primary' />
 	}
 ]

@@ -10,8 +10,8 @@ export default function RequiredTextArea({ label, ...props }: RequiredTextAreaPr
 	const id = useId()
 	return (
 		<div>
-			<Label htmlFor={id}>
-				{label || props.placeholder || 'Message'} <span className='text-destructive'>*</span>
+			<Label htmlFor={id} className='text-base'>
+				{label || props.placeholder || 'Message'} <span className='text-base text-destructive'>*</span>
 			</Label>
 			<div className='space-y-2'>
 				<Textarea id={id} {...props} />

@@ -10,8 +10,8 @@ export default function RequiredInput({ label, ...props }: RequiredInputProps) {
 	const id = useId()
 	return (
 		<div>
-			<Label htmlFor={id}>
-				{label || props.placeholder || 'Input'} <span className='text-destructive'>*</span>
+			<Label htmlFor={id} className='text-base'>
+				{label || props.placeholder || 'Input'} <span className='text-base text-destructive'>*</span>
 			</Label>
 			<div className='space-y-2'>
 				<Input id={id} {...props} />

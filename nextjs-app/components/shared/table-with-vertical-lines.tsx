@@ -15,7 +15,7 @@ type TableWithVerticalLinesProps = {
 
 export default function TableWithVerticalLines({ data }: TableWithVerticalLinesProps) {
 	return (
-		<div className='max-w-5xl mx-auto w-full'>
+		<div className='overflow-hidden rounded-none border border-primary max-w-5xl mx-auto w-full'>
 			<Table>
 				<TableHeader className='bg-brand-800'>
 					<TableRow className='*:border-primary hover:bg-transparent [&>:not(:last-child)]:border-r'>
