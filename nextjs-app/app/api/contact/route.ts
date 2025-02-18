@@ -2,25 +2,27 @@ import { contactFormSchema } from '@/components/pages/contact/contact-form-schem
 import { NextResponse } from 'next/server'
 
 export async function POST(request: Request) {
-	const body = await request.json()
-	const res = contactFormSchema.safeParse(body)
-
-	if (!res.success) {
-		const { errors } = res.error
-		console.log({ errors })
-		return NextResponse.json({ error: `${errors}. Please try again!` })
-	}
-
-	const { name, email, message } = res.data
-
-	if (!name || !email || !message) return NextResponse.json({ error: 'Invalid data. Please try again!' })
-
 	try {
+		const body = await request.json()
+		console.log('Received request body:', body) // Debug log
+		const res = contactFormSchema.safeParse(body)
+
+		if (!res.success) {
+			const { errors } = res.error
+			console.error('Validation errors:', errors)
+			return NextResponse.json({ error: `${errors}. Please try again!` }, { status: 400 })
+		}
+
+		const { name, email, message } = res.data
+		console.log('Sending email for:', { name, email }) // Debug log
+
+		if (!name || !email || !message) return NextResponse.json({ error: 'Invalid data. Please try again!' })
+
 		const response = await fetch('https://api.useplunk.com/v1/send', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
-				Authorization: `Bearer ${process.env.NEXT_PUBLIC_PLUNK_API_KEY}`
+				Authorization: `Bearer ${process.env.PLUNK_SECRET_API_KEY}`
 			},
 			body: JSON.stringify({
 				to: process.env.EMAIL_NOTIFICATION_ADDRESS,
@@ -34,12 +36,16 @@ export async function POST(request: Request) {
 		})
 
 		if (!response.ok) {
+			console.error('Plunk API error:', await response.text())
 			throw new Error('Failed to send email')
 		}
-	} catch (err) {
-		console.error(err)
-		return NextResponse.json({ message: `Could not submit message.`, err })
-	}
 
-	return NextResponse.json({ message: 'Message submitted.', res })
+		return NextResponse.json({ message: 'Message submitted.' }, { status: 200 })
+	} catch (err) {
+		console.error('Server error:', err)
+		return NextResponse.json(
+			{ error: 'Could not submit message.', details: err instanceof Error ? err.message : String(err) },
+			{ status: 500 }
+		)
+	}
 }

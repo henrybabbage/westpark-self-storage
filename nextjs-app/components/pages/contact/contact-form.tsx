@@ -28,6 +28,7 @@ export default function ContactForm() {
 		setSubmitError(null)
 
 		try {
+			console.log('Submitting form:', values) // Debug log
 			const response = await fetch('/api/contact', {
 				method: 'POST',
 				headers: {
@@ -37,14 +38,16 @@ export default function ContactForm() {
 			})
 
 			const data = await response.json()
+			console.log('Response:', data) // Debug log
 
 			if (!response.ok) {
-				throw new Error(data.error || 'Failed to send message')
+				throw new Error(data.error || data.details || 'Failed to send message')
 			}
 
 			form.reset()
 			// Optional: Add success toast/message here
 		} catch (error) {
+			console.error('Form submission error:', error)
 			setSubmitError(error instanceof Error ? error.message : 'Failed to send message')
 		} finally {
 			setIsSubmitting(false)
