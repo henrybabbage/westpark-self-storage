@@ -151,11 +151,12 @@ export default {
 				sans: ['var(--font-inter)'],
 				slab: ['var(--font-slab)']
 			},
-			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
-			},
+			// borderRadius: {
+			// 	xl: 'calc(var(--radius) + 4px)',
+			// 	lg: 'var(--radius)',
+			// 	md: 'calc(var(--radius) - 2px)',
+			// 	sm: 'calc(var(--radius) - 4px)'
+			// },
 			animation: {
 				'slide-down': 'slide-down 300ms cubic-bezier(0.87, 0, 0.13, 1)',
 				'slide-up': 'slide-up 300ms cubic-bezier(0.87, 0, 0.13, 1)'

@@ -1,5 +1,6 @@
 import './globals.css'
 
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata } from 'next'
 import { VisualEditing } from 'next-sanity'
@@ -61,6 +62,8 @@ const inter = Inter({
 	display: 'swap'
 })
 
+const GOOGLE_ANALYTICS_ID = process.env.GOOGLE_ANALYTICS_ID
+
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
 	const { isEnabled: isDraftMode } = await draftMode()
 
@@ -86,6 +89,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 				<SpeedInsights />
 				<TailwindIndicator />
 			</body>
+			{GOOGLE_ANALYTICS_ID && <GoogleAnalytics gaId={GOOGLE_ANALYTICS_ID} />}
 		</html>
 	)
 }
