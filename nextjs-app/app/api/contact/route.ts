@@ -24,7 +24,7 @@ export async function POST(request: Request) {
 			},
 			body: JSON.stringify({
 				to: process.env.EMAIL_NOTIFICATION_ADDRESS,
-				subject: `New Contact Form Submission from ${name}`,
+				subject: `New contact form submission from ${name}`,
 				body: `
 					Name: ${name}
 					Email: ${email}
