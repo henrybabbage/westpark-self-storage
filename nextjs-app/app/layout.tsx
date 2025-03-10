@@ -32,7 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
 	const title = 'Westpark Self Storage'
 	// settings?.title || demo.title
 	const description =
-		'For a safe, clean and secure way to store your goods, speak to Westpark Self Storage in Christchurch.'
+		'For a safe, clean and secure way to store your goods, speak to Westpark Self Storage in Hornby, Christchurch, New Zealand.'
 	// settings?.description || demo.description
 
 	const ogImage = resolveOpenGraphImage(settings?.ogImage)
