@@ -33,7 +33,7 @@ export default function ContactForm() {
 
 		const generateToken = async () => {
 			try {
-				const newToken = await executeRecaptcha('signup')
+				const newToken = await executeRecaptcha('contact')
 				console.log('newToken', newToken)
 				setRecaptchaToken(newToken)
 			} catch (error) {

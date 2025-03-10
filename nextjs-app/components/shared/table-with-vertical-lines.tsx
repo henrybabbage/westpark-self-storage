@@ -19,8 +19,8 @@ export default function TableWithVerticalLines({ data }: TableWithVerticalLinesP
 			<Table>
 				<TableHeader className='bg-brand-800'>
 					<TableRow className='*:border-primary hover:bg-transparent [&>:not(:last-child)]:border-r'>
-						<TableHead className='text-background text-base align-middle'>Price</TableHead>
 						<TableHead className='text-background text-base align-middle'>Size</TableHead>
+						<TableHead className='text-background text-base align-middle'>Price</TableHead>
 						<TableHead className='text-background text-base align-middle'>Area</TableHead>
 						<TableHead className='text-background text-base align-middle'>Dimensions</TableHead>
 						<TableHead className='text-background text-base align-middle hidden lg:table-cell'>
@@ -48,7 +48,7 @@ export default function TableWithVerticalLines({ data }: TableWithVerticalLinesP
 							colSpan={5}
 							className='text-center h-12 bg-background hover:bg-transparent py-1 text-sm text-muted-foreground font-normal'
 						>
-							Prices are GST inclusive.
+							Prices are per month, GST inclusive.
 						</TableCell>
 					</TableRow>
 				</TableFooter>

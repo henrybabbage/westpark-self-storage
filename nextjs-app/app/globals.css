@@ -31,7 +31,7 @@
     }
 
     * {
-        @apply box-border overscroll-none border-border;
+        @apply box-border overscroll-none border-border outline-ring/50;
     }
 
     body {
@@ -71,6 +71,10 @@
 
     .mapboxgl-ctrl-bottom-left {
         @apply !hidden
+    }
+
+    .grecaptcha-badge {
+        visibility: hidden;
     }
 
 }
