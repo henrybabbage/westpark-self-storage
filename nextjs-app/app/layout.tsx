@@ -7,6 +7,7 @@ import { VisualEditing } from 'next-sanity'
 import { Inter } from 'next/font/google'
 import { draftMode } from 'next/headers'
 import { Toaster } from 'sonner'
+import { Analytics } from "@vercel/analytics/react"
 
 import DraftModeToast from '@/app/components/DraftModeToast'
 import Footer from '@/app/components/Footer'
@@ -88,6 +89,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 				</section>
 				<SpeedInsights />
 				<TailwindIndicator />
+				<Analytics />
 			</body>
 			{GOOGLE_ANALYTICS_ID && <GoogleAnalytics gaId={GOOGLE_ANALYTICS_ID} />}
 		</html>
