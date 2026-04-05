@@ -30,8 +30,7 @@ export default function Footer() {
 					{/* Contact Column */}
 					<div className='md:col-span-1 md:col-start-2 lg:col-start-6 lg:col-span-3'>
 						<h3 className='font-medium mb-4'>Contact</h3>
-						<p className=''>Stan</p>
-						<p className=''>0274 977407</p>
+						<p className=''>0274 8042 000</p>
 						<p>westparkstorageunits@gmail.com</p>
 					</div>
 
