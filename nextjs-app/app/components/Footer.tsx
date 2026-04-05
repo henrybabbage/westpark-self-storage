@@ -10,7 +10,7 @@ export default function Footer() {
 				<div className='flex items-center mb-20'>
 					<h3 className='text-4xl font-medium'>
 						<span className='sm:inline'>Call us on </span>
-						<span className='block sm:inline'>0274 977407</span>
+						<span className='block sm:inline'>0274 8042 000</span>
 					</h3>
 				</div>
 
