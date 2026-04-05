@@ -6,7 +6,7 @@ For a safe, clean and secure way to store your goods, speak to Westpark Self Sto
 
 This website is built from a starter template that includes a [Next.js](https://nextjs.org/) app with a [Sanity Studio](https://www.sanity.io/) – an open-source React application that connects to your Sanity project’s hosted dataset. The Studio is configured locally and can then be deployed for content collaboration.
 
-![Uploading westpark.png…]()
+![Westpark Self Storage Website](https://github.com/user-attachments/assets/6504a7a3-1381-4999-b331-d9732a36b790)
 
 ## Features
 
