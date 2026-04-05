@@ -10,7 +10,7 @@ export default function Footer() {
 				<div className='flex items-center mb-20'>
 					<h3 className='text-4xl font-medium'>
 						<span className='sm:inline'>Call us on </span>
-						<span className='block sm:inline'>0274 8042 000</span>
+						<span className='block sm:inline'>027 8042 000</span>
 					</h3>
 				</div>
 
@@ -30,7 +30,7 @@ export default function Footer() {
 					{/* Contact Column */}
 					<div className='md:col-span-1 md:col-start-2 lg:col-start-6 lg:col-span-3'>
 						<h3 className='font-medium mb-4'>Contact</h3>
-						<p className=''>0274 8042 000</p>
+						<p className=''>027 8042 000</p>
 						<p>westparkstorageunits@gmail.com</p>
 					</div>
 

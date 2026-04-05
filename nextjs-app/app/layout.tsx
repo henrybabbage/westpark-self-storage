@@ -88,7 +88,7 @@ const jsonLd: WithContext<LocalBusiness> = {
 		longitude: 172.50659
 	},
 	openingHours: 'Mo-Su 00:00-23:59',
-	telephone: '+64274977407'
+	telephone: '+64278042000'
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {

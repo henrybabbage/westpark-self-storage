@@ -29,7 +29,7 @@ export default function MapSection() {
 					<div>
 						<h3 className='font-medium mb-2'>Contact</h3>
 						<p className='font-normal'>
-							0274 8042 000
+							027 8042 000
 							<br />
 							westparkstorageunits@gmail.com
 						</p>
