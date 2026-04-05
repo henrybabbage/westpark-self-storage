@@ -90,9 +90,9 @@ export default function Header() {
 						<li className='flex'>
 							<Link
 								className='font-medium whitespace-nowrap rounded-full flex gap-2 items-center bg-primary hover:bg-brand-800 p-1 sm:py-3 sm:px-6 text-white transition-colors duration-200'
-								href='tel:02748042000'
+								href='tel:0278042000'
 							>
-								0274 8042 000
+								027 8042 000
 							</Link>
 						</li>
 					</ul>
