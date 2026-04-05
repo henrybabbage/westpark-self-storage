@@ -81,7 +81,7 @@ export default function ContactForm() {
 				{/* Text */}
 				<div className='space-y-6'>
 					<p className='text-base sm:text-base'>
-						If you have any queries, please do not hesitate to call us on 0274 977407.
+						If you have any queries, please do not hesitate to call us on 0274 8042 000.
 					</p>
 
 					<p className='text-base sm:text-base'>
