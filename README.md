@@ -1,8 +1,12 @@
 # Westpark Self Storage
 
+For a safe, clean and secure way to store your goods, speak to Westpark Self Storage in Hornby, Christchurch, New Zealand.
+
+## Codebase Architecture
+
 This website is built from a starter template that includes a [Next.js](https://nextjs.org/) app with a [Sanity Studio](https://www.sanity.io/) – an open-source React application that connects to your Sanity project’s hosted dataset. The Studio is configured locally and can then be deployed for content collaboration.
 
-![Screenshot of Sanity Studio using Presentation Tool to do Visual Editing](https://cdn.sanity.io/images/fkfgfb3d/production/8f626d30c5c41a5d2d75f899645beada2b82826b-3248x2112.png?auto=format)
+![Uploading westpark.png…]()
 
 ## Features
 
@@ -15,7 +19,7 @@ This website is built from a starter template that includes a [Next.js](https://
 - **On-demand Publishing:** No waiting for rebuilds—new content is live instantly with Incremental Static Revalidation.
 - **Easy Media Management:** [Integrated Unsplash support](https://www.sanity.io/plugins/sanity-plugin-asset-source-unsplash) for seamless media handling.
 
-## Demo
+## Sanity + Next.JS Starter Template Demo
 
 https://template-nextjs-clean.sanity.dev
 
